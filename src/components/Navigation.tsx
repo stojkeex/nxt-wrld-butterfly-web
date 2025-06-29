@@ -28,9 +28,9 @@ const Navigation = ({ onSupportClick }: NavigationProps) => {
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/8669a517-0f9f-4238-af67-ec96af8c379c.png" 
+                src="/lovable-uploads/ccb51599-35ea-4864-918e-4d6f9cbb43ea.png" 
                 alt="NXT WRLD Logo" 
-                className="h-12 w-auto"
+                className="h-16 w-auto"
               />
             </Link>
 

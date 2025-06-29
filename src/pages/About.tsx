@@ -35,18 +35,31 @@ const About = () => {
                 movement towards the future of fashion.
               </p>
             </div>
-            <div className="glass-card p-8">
-              <h2 className="font-bebas text-4xl mb-6 tracking-wider text-primary">OUR MISSION</h2>
-              <p className="text-gray-300 font-space mb-6 leading-relaxed">
-                To redefine streetwear for the digital age by creating innovative, 
-                high-quality apparel that empowers individuals to express their unique 
-                identity and embrace the future with confidence.
-              </p>
-              <p className="text-gray-300 font-space leading-relaxed">
-                Every piece tells a story of innovation, rebellion against the ordinary, 
-                and a commitment to pushing the boundaries of what fashion can be.
-              </p>
+            <div className="glass-card p-8 flex items-center justify-center">
+              <img 
+                src="/lovable-uploads/ccb51599-35ea-4864-918e-4d6f9cbb43ea.png" 
+                alt="NXT WRLD Logo" 
+                className="max-w-full h-auto opacity-80"
+              />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="glass-card p-8 text-center">
+            <h2 className="font-bebas text-4xl mb-6 tracking-wider text-primary">OUR MISSION</h2>
+            <p className="text-gray-300 font-space mb-6 leading-relaxed">
+              To redefine streetwear for the digital age by creating innovative, 
+              high-quality apparel that empowers individuals to express their unique 
+              identity and embrace the future with confidence.
+            </p>
+            <p className="text-gray-300 font-space leading-relaxed">
+              Every piece tells a story of innovation, rebellion against the ordinary, 
+              and a commitment to pushing the boundaries of what fashion can be.
+            </p>
           </div>
         </div>
       </section>
@@ -92,20 +105,33 @@ const About = () => {
 
       {/* Team Section */}
       <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="glass-card p-12 text-center">
-            <h2 className="font-bebas text-4xl mb-6 tracking-wider">
-              THE <span className="text-primary">TEAM</span>
-            </h2>
-            <p className="text-gray-300 font-space text-lg leading-relaxed mb-8">
-              Our diverse team of designers, creators, and visionaries work tirelessly 
-              to bring you fashion that's not just clothing – it's a statement about 
-              who you are and where you're going.
-            </p>
-            <p className="text-gray-300 font-space leading-relaxed">
-              From concept to creation, every piece is crafted with passion, 
-              precision, and an unwavering commitment to excellence.
-            </p>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-bebas text-5xl text-center mb-16 tracking-wider">
+            THE <span className="text-primary">TEAM</span>
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="glass-card p-8 text-center">
+              <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                <Users className="text-white" size={48} />
+              </div>
+              <h3 className="font-bebas text-2xl mb-4 tracking-wider text-primary">ALEX CHEN</h3>
+              <p className="text-gray-300 font-space mb-4">Creative Director & Founder</p>
+              <p className="text-gray-300 font-space text-sm leading-relaxed">
+                Visionary behind NXT WRLD's innovative designs. Alex brings 8+ years of 
+                streetwear experience and a passion for pushing creative boundaries.
+              </p>
+            </div>
+            <div className="glass-card p-8 text-center">
+              <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center">
+                <Target className="text-white" size={48} />
+              </div>
+              <h3 className="font-bebas text-2xl mb-4 tracking-wider text-secondary">JORDAN MARTINEZ</h3>
+              <p className="text-gray-300 font-space mb-4">Head of Design & Innovation</p>
+              <p className="text-gray-300 font-space text-sm leading-relaxed">
+                Master of blending technology with fashion. Jordan's expertise in sustainable 
+                materials and futuristic aesthetics drives our product development.
+              </p>
+            </div>
           </div>
         </div>
       </section>
