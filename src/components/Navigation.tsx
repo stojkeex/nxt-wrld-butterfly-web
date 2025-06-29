@@ -83,7 +83,7 @@ const Navigation = ({ onSupportClick }: NavigationProps) => {
       {/* Fixed Support Button */}
       <button
         onClick={onSupportClick}
-        className="fixed right-6 top-1/2 -translate-y-1/2 z-40 glass-card p-4 hover:bg-primary hover:text-black transition-all duration-300 group shadow-2xl"
+        className="fixed right-0 top-1/2 -translate-y-1/2 z-40 glass-card p-4 hover:bg-primary hover:text-black transition-all duration-300 group shadow-2xl rounded-l-lg rounded-r-none"
         title="Live Support"
       >
         <MessageCircle className="group-hover:scale-110 transition-transform" size={24} />
