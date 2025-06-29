@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, ShoppingBag, Heart, Share2 } from 'lucide-react';
 
 interface Product {
@@ -28,6 +28,20 @@ const ProductModal = ({ product, isOpen, onClose, onPurchaseClick }: ProductModa
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedColor, setSelectedColor] = useState('');
 
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   if (!isOpen || !product) return null;
 
   const nextImage = () => {
@@ -40,14 +54,14 @@ const ProductModal = ({ product, isOpen, onClose, onPurchaseClick }: ProductModa
 
   const handlePurchase = () => {
     if (!selectedSize || !selectedColor) {
-      alert('Prosimo izberite velikost in barvo.');
+      alert('Please select size and color.');
       return;
     }
     onPurchaseClick();
   };
 
   return (
-    <div className="fixed inset-0 z-[9998] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[9998] flex items-center justify-center p-4 overflow-hidden">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/80 backdrop-blur-sm"
@@ -134,7 +148,7 @@ const ProductModal = ({ product, isOpen, onClose, onPurchaseClick }: ProductModa
 
               {/* Size Selection */}
               <div>
-                <h4 className="font-space font-medium mb-3">VELIKOST</h4>
+                <h4 className="font-space font-medium mb-3">SIZE</h4>
                 <div className="flex flex-wrap gap-2">
                   {product.sizes.map((size) => (
                     <button
@@ -154,7 +168,7 @@ const ProductModal = ({ product, isOpen, onClose, onPurchaseClick }: ProductModa
 
               {/* Color Selection */}
               <div>
-                <h4 className="font-space font-medium mb-3">BARVA</h4>
+                <h4 className="font-space font-medium mb-3">COLOR</h4>
                 <div className="flex flex-wrap gap-2">
                   {product.colors.map((color) => (
                     <button
@@ -179,7 +193,7 @@ const ProductModal = ({ product, isOpen, onClose, onPurchaseClick }: ProductModa
                   <p className="text-gray-300 text-sm">{product.material}</p>
                 </div>
                 <div>
-                  <h4 className="font-space font-medium mb-2">NEGA</h4>
+                  <h4 className="font-space font-medium mb-2">CARE</h4>
                   <p className="text-gray-300 text-sm">{product.care}</p>
                 </div>
               </div>
@@ -190,7 +204,7 @@ const ProductModal = ({ product, isOpen, onClose, onPurchaseClick }: ProductModa
                 className="w-full glass-card p-4 hover:bg-primary hover:text-black transition-all duration-300 group flex items-center justify-center space-x-3"
               >
                 <ShoppingBag className="group-hover:scale-110 transition-transform" size={20} />
-                <span className="font-bebas text-lg tracking-wider">KUPI ZDAJ</span>
+                <span className="font-bebas text-lg tracking-wider">BUY NOW</span>
               </button>
             </div>
           </div>

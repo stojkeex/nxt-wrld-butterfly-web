@@ -47,13 +47,6 @@ const Navigation = ({ onSupportClick }: NavigationProps) => {
                   {item.label}
                 </Link>
               ))}
-              <button
-                onClick={onSupportClick}
-                className="flex items-center space-x-2 glass-card px-4 py-2 hover:bg-white/20 transition-colors"
-              >
-                <MessageCircle size={18} />
-                <span className="font-space text-sm">SUPPORT</span>
-              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -82,20 +75,19 @@ const Navigation = ({ onSupportClick }: NavigationProps) => {
                   {item.label}
                 </Link>
               ))}
-              <button
-                onClick={() => {
-                  onSupportClick();
-                  setIsMenuOpen(false);
-                }}
-                className="flex items-center space-x-2 glass-card px-4 py-2 hover:bg-white/20 transition-colors"
-              >
-                <MessageCircle size={18} />
-                <span className="font-space text-sm">SUPPORT</span>
-              </button>
             </div>
           </div>
         )}
       </nav>
+
+      {/* Fixed Support Button */}
+      <button
+        onClick={onSupportClick}
+        className="fixed right-6 top-1/2 -translate-y-1/2 z-40 glass-card p-4 hover:bg-primary hover:text-black transition-all duration-300 group shadow-2xl"
+        title="Live Support"
+      >
+        <MessageCircle className="group-hover:scale-110 transition-transform" size={24} />
+      </button>
     </>
   );
 };

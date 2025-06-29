@@ -28,98 +28,98 @@ const Shop = () => {
     {
       id: 1,
       name: "NEON DREAMS HOODIE",
-      price: "89,99 €",
+      price: "$89.99",
       category: "HOODIES",
       image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=500&fit=crop",
       images: [
         "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&h=800&fit=crop",
         "https://images.unsplash.com/photo-1512327428405-da9b9256b861?w=600&h=800&fit=crop"
       ],
-      description: "Udoben hoodie z neonskimi detajli, popoln za urbani življenjski slog.",
+      description: "Comfortable hoodie with neon details, perfect for urban lifestyle.",
       sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      colors: ["Črna", "Bela", "Neon Pink"],
-      material: "80% bombaž, 20% poliester",
-      care: "Pranje na 30°C, ne beljenje"
+      colors: ["Black", "White", "Neon Pink"],
+      material: "80% cotton, 20% polyester",
+      care: "Machine wash at 30°C, no bleach"
     },
     {
       id: 2,
       name: "CYBER JOGGERS",
-      price: "69,99 €",
+      price: "$69.99",
       category: "PANTS",
       image: "https://images.unsplash.com/photo-1506629905607-0214999bd8ca?w=400&h=500&fit=crop",
       images: [
         "https://images.unsplash.com/photo-1506629905607-0214999bd8ca?w=600&h=800&fit=crop",
         "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&h=800&fit=crop"
       ],
-      description: "Futuristične trenirke z refleksnimi elementi za maksimalen stil.",
+      description: "Futuristic joggers with reflective elements for maximum style.",
       sizes: ["XS", "S", "M", "L", "XL"],
-      colors: ["Črna", "Siva", "Navy"],
-      material: "100% poliester",
-      care: "Pranje na 40°C, lahko likanje"
+      colors: ["Black", "Gray", "Navy"],
+      material: "100% polyester",
+      care: "Machine wash at 40°C, iron if needed"
     },
     {
       id: 3,
       name: "GALAXY TEE",
-      price: "39,99 €",
+      price: "$39.99",
       category: "T-SHIRTS",
       image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=500&fit=crop",
       images: [
         "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=800&fit=crop",
         "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?w=600&h=800&fit=crop"
       ],
-      description: "Mehka majica z galaksijskim tiskom, izdelana iz organskega bombaža.",
+      description: "Soft t-shirt with galaxy print, made from organic cotton.",
       sizes: ["XS", "S", "M", "L", "XL"],
-      colors: ["Črna", "Navy", "Bela"],
-      material: "100% organski bombaž",
-      care: "Pranje na 30°C, obračanje na levo"
+      colors: ["Black", "Navy", "White"],
+      material: "100% organic cotton",
+      care: "Machine wash at 30°C, turn inside out"
     },
     {
       id: 4,
       name: "FUTURE JACKET",
-      price: "159,99 €",
+      price: "$159.99",
       category: "JACKETS",
       image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=500&fit=crop",
       images: [
         "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&h=800&fit=crop",
         "https://images.unsplash.com/photo-1544966503-7cc5ac882d5e?w=600&h=800&fit=crop"
       ],
-      description: "Inovativna jakna z vodoodbojno tehnologijo in modernim dizajnom.",
+      description: "Innovative jacket with water-resistant technology and modern design.",
       sizes: ["S", "M", "L", "XL"],
-      colors: ["Črna", "Vojaška zelena"],
-      material: "Nylon z vodoodbojno prevleko",
-      care: "Kemično čiščenje priporočeno"
+      colors: ["Black", "Military Green"],
+      material: "Nylon with water-resistant coating",
+      care: "Dry clean recommended"
     },
     {
       id: 5,
       name: "NEON SNEAKERS",
-      price: "119,99 €",
+      price: "$119.99",
       category: "SHOES",
       image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=500&fit=crop",
       images: [
         "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=800&fit=crop",
         "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=800&fit=crop"
       ],
-      description: "Svetleči športni čevlji z neonskimi detajli za urbani stil.",
+      description: "Glowing sneakers with neon details for urban style.",
       sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45"],
-      colors: ["Črna/Neon", "Bela/Pink", "Siva/Blue"],
-      material: "Sintetični materiali, gumijast podplat",
-      care: "Čiščenje z vlažno krpo"
+      colors: ["Black/Neon", "White/Pink", "Gray/Blue"],
+      material: "Synthetic materials, rubber sole",
+      care: "Clean with damp cloth"
     },
     {
       id: 6,
       name: "HOLOGRAM CAP",
-      price: "29,99 €",
+      price: "$29.99",
       category: "ACCESSORIES",
       image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=500&fit=crop",
       images: [
         "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&h=800&fit=crop",
         "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=600&h=800&fit=crop"
       ],
-      description: "Hologramska kapa z nastavljivo velikostjo in futurističnim dizajnom.",
+      description: "Holographic cap with adjustable size and futuristic design.",
       sizes: ["One Size"],
-      colors: ["Hologram", "Črna/Hologram"],
-      material: "100% bombaž, hologramski panel",
-      care: "Ročno pranje"
+      colors: ["Hologram", "Black/Hologram"],
+      material: "100% cotton, holographic panel",
+      care: "Hand wash only"
     }
   ];
 
@@ -148,7 +148,7 @@ const Shop = () => {
             <span className="text-primary">NXT</span> SHOP
           </h1>
           <p className="text-xl text-gray-300 text-center max-w-2xl mx-auto">
-            Odkrijte našo najnovejšo kolekcijo futurističnih oblačil in dodatkov
+            Discover our latest collection of futuristic clothing and accessories
           </p>
         </div>
       </section>
@@ -162,7 +162,7 @@ const Shop = () => {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
               <input
                 type="text"
-                placeholder="Iskanje izdelkov..."
+                placeholder="Search products..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full glass-card pl-10 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
@@ -220,7 +220,7 @@ const Shop = () => {
                   <p className="text-gray-300 text-sm mb-4">{product.description}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-gray-400">
-                      {product.sizes.length} velikosti
+                      {product.sizes.length} sizes
                     </span>
                     <ShoppingBag className="text-primary group-hover:scale-110 transition-transform" size={20} />
                   </div>
@@ -231,7 +231,7 @@ const Shop = () => {
 
           {filteredProducts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-xl text-gray-400">Ni najdenih izdelkov za vaš iskalni pojem.</p>
+              <p className="text-xl text-gray-400">No products found for your search term.</p>
             </div>
           )}
         </div>

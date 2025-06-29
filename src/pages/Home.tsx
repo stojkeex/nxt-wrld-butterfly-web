@@ -1,79 +1,34 @@
 
 import React from 'react';
+import { ShoppingBag, Sparkles, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Zap, Globe } from 'lucide-react';
 
 const Home = () => {
-  const features = [
-    {
-      icon: <Star className="text-primary" size={32} />,
-      title: "PREMIUM KVALITETA",
-      description: "Vsak izdelek je skrbno izbran in preverjen za vrhunsko kakovost."
-    },
-    {
-      icon: <Zap className="text-secondary" size={32} />,
-      title: "HITRA DOSTAVA",
-      description: "Hitro in zanesljivo dostavljamo po vsej Sloveniji."
-    },
-    {
-      icon: <Globe className="text-primary" size={32} />,
-      title: "GLOBALNA MODA",
-      description: "Najnovejši trendi iz celega sveta na enem mestu."
-    }
-  ];
-
-  const showcaseItems = [
-    {
-      title: "STREETWEAR",
-      description: "Urbani stili za moderno generacijo",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&h=600&fit=crop"
-    },
-    {
-      title: "PREMIUM",
-      description: "Luksuzni kosi za posebne priložnosti",
-      image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=500&h=600&fit=crop"
-    },
-    {
-      title: "ACCESSORIES",
-      description: "Dopolni svoj stil z našimi dodatki",
-      image: "https://images.unsplash.com/photo-1506629905607-0214999bd8ca?w=500&h=600&fit=crop"
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center text-center px-4">
-        <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-          <img 
-            src="/lovable-uploads/8669a517-0f9f-4238-af67-ec96af8c379c.png" 
-            alt="NXT WRLD Logo" 
-            className="h-32 mx-auto mb-8"
-          />
-          <h1 className="font-bebas text-6xl md:text-8xl lg:text-9xl tracking-wider text-white">
-            WELCOME TO THE
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              NXT WRLD
-            </span>
+      <section className="min-h-screen flex items-center justify-center px-4 relative">
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="font-bebas text-8xl md:text-9xl lg:text-[12rem] tracking-wider mb-8">
+            <span className="text-primary">NXT</span> WRLD
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Odkrijte prihodnost mode z našimi edinstvenimi kolekcijami. 
-            Kjer se srečajo stil, kakovost in inovacija.
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 font-space max-w-2xl mx-auto leading-relaxed">
+            Step into the future of fashion. Where innovation meets style in the digital age.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <Link
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Link 
               to="/shop"
-              className="glass-card px-8 py-4 hover:bg-primary hover:text-black transition-all duration-300 group flex items-center justify-center space-x-2"
+              className="glass-card px-8 py-4 hover:bg-primary hover:text-black transition-all duration-300 group flex items-center space-x-3"
             >
-              <span className="font-bebas text-lg tracking-wider">NAKUPUJ ZDAJ</span>
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+              <ShoppingBag className="group-hover:scale-110 transition-transform" size={24} />
+              <span className="font-bebas text-xl tracking-wider">EXPLORE COLLECTION</span>
             </Link>
-            <Link
+            <Link 
               to="/about"
-              className="glass-card px-8 py-4 hover:bg-white/20 transition-all duration-300 flex items-center justify-center"
+              className="glass-card px-8 py-4 hover:bg-white/20 transition-colors flex items-center space-x-3"
             >
-              <span className="font-bebas text-lg tracking-wider">VEČ O NAS</span>
+              <Sparkles size={24} />
+              <span className="font-bebas text-xl tracking-wider">DISCOVER STORY</span>
             </Link>
           </div>
         </div>
@@ -82,50 +37,31 @@ const Home = () => {
       {/* Features Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-bebas text-4xl md:text-6xl text-center mb-16 tracking-wider">
-            ZAKAJ <span className="text-primary">NXT WRLD</span>?
+          <h2 className="font-bebas text-5xl md:text-6xl text-center mb-16 tracking-wider">
+            THE <span className="text-secondary">FUTURE</span> IS NOW
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="glass-card p-8 text-center hover:bg-white/10 transition-all duration-300">
-                <div className="mb-6 flex justify-center">{feature.icon}</div>
-                <h3 className="font-bebas text-2xl mb-4 tracking-wider">{feature.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Showcase Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-bebas text-4xl md:text-6xl text-center mb-16 tracking-wider">
-            NAŠE <span className="text-secondary">KOLEKCIJE</span>
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {showcaseItems.map((item, index) => (
-              <div key={index} className="glass-card overflow-hidden hover:scale-105 transition-transform duration-300">
-                <div className="h-64 overflow-hidden">
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-bebas text-2xl mb-2 tracking-wider">{item.title}</h3>
-                  <p className="text-gray-300 mb-4">{item.description}</p>
-                  <Link
-                    to="/shop"
-                    className="inline-flex items-center space-x-2 text-primary hover:text-secondary transition-colors"
-                  >
-                    <span className="font-space font-medium">Raziskuj</span>
-                    <ArrowRight size={16} />
-                  </Link>
-                </div>
-              </div>
-            ))}
+            <div className="glass-card p-8 text-center hover:bg-white/10 transition-colors">
+              <Zap className="mx-auto mb-6 text-primary" size={48} />
+              <h3 className="font-bebas text-2xl mb-4 tracking-wider">INNOVATIVE DESIGN</h3>
+              <p className="text-gray-300 font-space">
+                Cutting-edge fashion that pushes the boundaries of traditional streetwear.
+              </p>
+            </div>
+            <div className="glass-card p-8 text-center hover:bg-white/10 transition-colors">
+              <Sparkles className="mx-auto mb-6 text-secondary" size={48} />
+              <h3 className="font-bebas text-2xl mb-4 tracking-wider">PREMIUM QUALITY</h3>
+              <p className="text-gray-300 font-space">
+                Only the finest materials and craftsmanship go into every piece we create.
+              </p>
+            </div>
+            <div className="glass-card p-8 text-center hover:bg-white/10 transition-colors">
+              <ShoppingBag className="mx-auto mb-6 text-primary" size={48} />
+              <h3 className="font-bebas text-2xl mb-4 tracking-wider">LIMITED DROPS</h3>
+              <p className="text-gray-300 font-space">
+                Exclusive collections released in limited quantities for true collectors.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -134,21 +70,19 @@ const Home = () => {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="glass-card p-12">
-            <h2 className="font-bebas text-4xl md:text-6xl mb-6 tracking-wider">
-              PRIPRAVLJEN NA <span className="text-primary">SPREMEMBO</span>?
+            <h2 className="font-bebas text-4xl md:text-5xl mb-6 tracking-wider">
+              JOIN THE <span className="text-primary">REVOLUTION</span>
             </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Pridruži se naši skupnosti in bodi prvi, ki izvê za nove kolekcije in ekskluzivne ponudbe.
+            <p className="text-xl text-gray-300 mb-8 font-space">
+              Be part of the next generation of fashion enthusiasts
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/shop"
-                className="glass-card px-8 py-4 hover:bg-primary hover:text-black transition-all duration-300 group flex items-center justify-center space-x-2"
-              >
-                <span className="font-bebas text-lg tracking-wider">ZAČNI NAKUPOVATI</span>
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </Link>
-            </div>
+            <Link 
+              to="/shop"
+              className="inline-flex items-center space-x-3 bg-primary text-black px-8 py-4 hover:bg-secondary transition-colors font-bebas text-xl tracking-wider"
+            >
+              <span>SHOP NOW</span>
+              <ShoppingBag size={24} />
+            </Link>
           </div>
         </div>
       </section>
