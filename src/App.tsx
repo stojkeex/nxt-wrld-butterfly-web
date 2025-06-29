@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,6 +18,20 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const [isSupportOpen, setIsSupportOpen] = useState(false);
+
+  // Prevent background scrolling when live support is open
+  useEffect(() => {
+    if (isSupportOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isSupportOpen]);
 
   return (
     <QueryClientProvider client={queryClient}>
