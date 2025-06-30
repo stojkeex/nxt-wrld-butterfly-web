@@ -32,6 +32,7 @@ const Shop = () => {
       category: "T-SHIRTS",
       image: "/nxtwrldtshirt.webp",
       images: [
+        "/nxtwrldtshirt.webp",
         "/nxtwrldtshirt2.webp"
       ],
       description: "Comfortable hoodie with neon details, perfect for urban lifestyle.",
