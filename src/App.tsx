@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -18,14 +17,11 @@ import Terms from "./pages/Terms";
 import Exclusive from "./pages/Exclusive";
 import Vip from "./pages/Vip";
 
-
-
 const queryClient = new QueryClient();
 
 const App = () => {
   const [isSupportOpen, setIsSupportOpen] = useState(false);
 
-  // Prevent background scrolling when live support is open
   useEffect(() => {
     if (isSupportOpen) {
       document.body.style.overflow = 'hidden';
@@ -33,11 +29,19 @@ const App = () => {
       document.body.style.overflow = 'unset';
     }
 
-    // Cleanup function to reset overflow when component unmounts
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isSupportOpen]);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://embed.tawk.to/6862cb320a9288190d1bbe2c/1iv0ujgl2';
+    script.async = true;
+    script.charset = 'UTF-8';
+    script.setAttribute('crossorigin', '*');
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -45,7 +49,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <ScrollToTop /> {/* Dodaj tukaj */}
+          <ScrollToTop />
           <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
             <AnimatedButterflies />
             <Navigation onSupportClick={() => setIsSupportOpen(true)} />
