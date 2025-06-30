@@ -28,24 +28,24 @@ const PurchaseModal = ({ isOpen, onClose, product }: PurchaseModalProps) => {
     {
       platform: 'Instagram',
       icon: <Instagram size={24} />,
-      handle: '@nxtworld.official',
-      action: () => window.open('https://instagram.com/nxtworld.official', '_blank'),
+      handle: '@nxtwrld.wear',
+      action: () => window.open('https://instagram.com/nxtwrld.wear', '_blank'),
       description: 'Send us a direct message on Instagram',
       color: 'hover:bg-pink-600'
     },
     {
       platform: 'WhatsApp',
       icon: <MessageCircle size={24} />,
-      handle: '+386 40 123 456',
-      action: () => window.open('https://wa.me/38640123456', '_blank'),
+      handle: '+386 51 656 615',
+      action: () => window.open('https://wa.me/38651656615', '_blank'),
       description: 'Contact us via WhatsApp',
       color: 'hover:bg-green-600'
     },
     {
       platform: 'Email',
       icon: <Mail size={24} />,
-      handle: 'shop@nxtworld.com',
-      action: () => window.open('mailto:shop@nxtworld.com?subject=Order: ' + product.name, '_blank'),
+      handle: 'nxtwrld.wear@gmail.com',
+      action: () => window.open('mailto:nxtwrld.wear@gmail.com?subject=Order: ' + product.name, '_blank'),
       description: 'Send us an email with your order',
       color: 'hover:bg-blue-600'
     }
