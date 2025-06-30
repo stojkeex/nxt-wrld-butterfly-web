@@ -114,8 +114,8 @@ const About = () => {
               <div className="w-40 h-40 mx-auto mb-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-2xl">
                 <Users className="text-white" size={64} />
               </div>
-              <h3 className="font-bebas text-3xl mb-4 tracking-wider text-primary">ALEX CHEN</h3>
-              <p className="text-gray-300 font-space mb-6 text-lg font-medium">Creative Director & Founder</p>
+              <h3 className="font-bebas text-3xl mb-4 tracking-wider text-primary">Maj S.</h3>
+              <p className="text-gray-300 font-space mb-6 text-lg font-medium">CEO & Founder</p>
               <p className="text-gray-300 font-space text-sm leading-relaxed">
                 Visionary behind NXT WRLD's innovative designs. Alex brings 8+ years of 
                 streetwear experience and a passion for pushing creative boundaries beyond limits.
@@ -125,8 +125,8 @@ const About = () => {
               <div className="w-40 h-40 mx-auto mb-8 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center shadow-2xl">
                 <Target className="text-white" size={64} />
               </div>
-              <h3 className="font-bebas text-3xl mb-4 tracking-wider text-secondary">JORDAN MARTINEZ</h3>
-              <p className="text-gray-300 font-space mb-6 text-lg font-medium">Head of Design & Innovation</p>
+              <h3 className="font-bebas text-3xl mb-4 tracking-wider text-secondary">Rubens K.</h3>
+              <p className="text-gray-300 font-space mb-6 text-lg font-medium">CEO</p>
               <p className="text-gray-300 font-space text-sm leading-relaxed">
                 Master of blending technology with fashion. Jordan's expertise in sustainable 
                 materials and futuristic aesthetics drives our innovative product development.
