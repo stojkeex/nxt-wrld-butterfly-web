@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Terms from "./pages/Terms";
 import Exclusive from "./pages/Exclusive";
+import Vip from "./pages/Vip";
 
 
 
@@ -56,6 +57,7 @@ const App = () => {
               <Route path="*" element={<NotFound />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/exclusive" element={<Exclusive />} />
+              <Route path="*" element={<Vip />} />
             </Routes>
             <LiveSupport 
               isOpen={isSupportOpen} 
