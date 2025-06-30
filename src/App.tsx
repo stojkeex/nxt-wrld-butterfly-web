@@ -21,6 +21,7 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const [isSupportOpen, setIsSupportOpen] = useState(false);
+  const [broadcastMessage, setBroadcastMessage] = useState<string | null>(null);
 
   useEffect(() => {
     if (isSupportOpen) {
@@ -43,6 +44,20 @@ const App = () => {
     document.body.appendChild(script);
   }, []);
 
+  useEffect(() => {
+    const handleStorage = () => {
+      const message = localStorage.getItem("broadcastMessage");
+      if (message) setBroadcastMessage(message);
+    };
+
+    window.addEventListener("storage", handleStorage);
+    handleStorage();
+
+    return () => {
+      window.removeEventListener("storage", handleStorage);
+    };
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -52,6 +67,11 @@ const App = () => {
           <ScrollToTop />
           <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
             <AnimatedButterflies />
+            {broadcastMessage && (
+              <div className="fixed top-0 left-0 right-0 bg-red-600 text-white text-center p-4 z-50 animate-pulse">
+                {broadcastMessage}
+              </div>
+            )}
             <Navigation onSupportClick={() => setIsSupportOpen(true)} />
             <Routes>
               <Route path="/" element={<Home />} />
