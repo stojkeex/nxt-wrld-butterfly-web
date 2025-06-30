@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, ShoppingBag, Heart, Share2 } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, ShoppingBag } from 'lucide-react';
 
 interface Product {
   id: number;
@@ -28,7 +27,6 @@ const ProductModal = ({ product, isOpen, onClose, onPurchaseClick }: ProductModa
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedColor, setSelectedColor] = useState('');
 
-  // Prevent background scrolling when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -36,7 +34,6 @@ const ProductModal = ({ product, isOpen, onClose, onPurchaseClick }: ProductModa
       document.body.style.overflow = 'unset';
     }
 
-    // Cleanup function to reset overflow when component unmounts
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -128,14 +125,7 @@ const ProductModal = ({ product, isOpen, onClose, onPurchaseClick }: ProductModa
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-primary font-space font-medium">{product.category}</span>
-                  <div className="flex space-x-2">
-                    <button className="glass-card p-2 hover:bg-white/20 transition-colors">
-                      <Heart size={18} />
-                    </button>
-                    <button className="glass-card p-2 hover:bg-white/20 transition-colors">
-                      <Share2 size={18} />
-                    </button>
-                  </div>
+                  {/* Like/Share buttons removed */}
                 </div>
                 <h2 className="font-bebas text-3xl lg:text-4xl tracking-wider">{product.name}</h2>
                 <p className="text-2xl text-primary font-space font-bold mt-2">{product.price}</p>
