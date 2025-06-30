@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Instagram, MessageCircle } from 'lucide-react';
 
@@ -29,7 +28,7 @@ const Contact = () => {
       <section className="py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="font-bebas text-6xl md:text-8xl tracking-wider mb-8">
-            GET IN <span className="text-primary">TOUCH</span>
+            GET IN <span className="text-gradient-primary">TOUCH</span>
           </h1>
           <p className="text-xl text-gray-300 font-space">
             Ready to join the future of fashion? We'd love to hear from you.
@@ -42,11 +41,11 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="glass-card p-8">
-              <h2 className="font-bebas text-3xl mb-8 tracking-wider text-secondary">CONTACT INFO</h2>
+              <h2 className="font-bebas text-3xl mb-8 tracking-wider text-gradient-primary">CONTACT INFO</h2>
               
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <Mail className="text-primary" size={24} />
+                  <Mail className="text-gradient-primary" size={24} />
                   <div>
                     <p className="font-space font-medium">Email</p>
                     <p className="text-gray-300">nxtwrld.contact@gmail.com</p>
@@ -54,7 +53,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <Phone className="text-secondary" size={24} />
+                  <Phone className="text-gradient-primary" size={24} />
                   <div>
                     <p className="font-space font-medium">Phone</p>
                     <p className="text-gray-300">+386 51 656 615</p>
@@ -62,7 +61,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <MapPin className="text-primary" size={24} />
+                  <MapPin className="text-gradient-primary" size={24} />
                   <div>
                     <p className="font-space font-medium">Address</p>
                     <p className="text-gray-300">Not Yet</p>
@@ -84,7 +83,7 @@ const Contact = () => {
             </div>
 
             <div className="glass-card p-8">
-              <h3 className="font-bebas text-2xl mb-6 tracking-wider text-primary">BUSINESS HOURS</h3>
+              <h3 className="font-bebas text-2xl mb-6 tracking-wider text-gradient-primary">BUSINESS HOURS</h3>
               <div className="space-y-2 text-gray-300 font-space">
                 <div className="flex justify-between">
                   <span>Monday - Friday</span>
@@ -104,7 +103,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="glass-card p-8">
-            <h2 className="font-bebas text-3xl mb-8 tracking-wider text-primary">SEND MESSAGE</h2>
+            <h2 className="font-bebas text-3xl mb-8 tracking-wider text-gradient-primary">SEND MESSAGE</h2>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
