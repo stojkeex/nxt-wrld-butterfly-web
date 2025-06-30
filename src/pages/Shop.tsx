@@ -56,6 +56,22 @@ const Shop = () => {
       colors: ["White"],
       material: "80% polyester",
       care: "Machine wash at 30°C, no bleach"
+    },
+    {
+      id: 3,
+      name: "NXT WRLD HOODIE",
+      price: "Not Yet",
+      category: "HOODIES",
+      image: "/nxtwrldhoodie.webp",
+      images: [
+        "/nxtwrldhoodie.webp",
+        "/nxtwrldhoodie2.webp"
+      ],
+      description: "Futuristic joggers with reflective elements for maximum style.",
+      sizes: ["XS", "S", "M", "L", "XL"],
+      colors: ["Black"],
+      material: "80% polyester",
+      care: "Machine wash at 30°C, no bleach"
     }
   ];
 
