@@ -13,6 +13,8 @@ import About from "./pages/About";
 import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 const queryClient = new QueryClient();
 
@@ -39,6 +41,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop /> {/* Dodaj tukaj */}
           <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
             <AnimatedButterflies />
             <Navigation onSupportClick={() => setIsSupportOpen(true)} />
