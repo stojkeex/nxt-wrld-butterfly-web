@@ -55,7 +55,7 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
               <Route path="/terms" element={<Terms />} />
-              <Route path="/exlusive" element={<Exclusive />} />
+              <Route path="/exclusive" element={<Exclusive />} />
             </Routes>
             <LiveSupport 
               isOpen={isSupportOpen} 
