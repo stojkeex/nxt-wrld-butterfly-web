@@ -45,7 +45,7 @@ const Contact = () => {
               
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <Mail className="icon-gradient" size={24} />
+                  <Mail className="text-secondary" size={24} />
                   <div>
                     <p className="font-space font-medium">Email</p>
                     <p className="text-gray-300">nxtwrld.contact@gmail.com</p>
@@ -53,7 +53,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <Phone className="icon-gradient" size={24} />
+                  <Phone className="text-secondary" size={24} />
                   <div>
                     <p className="font-space font-medium">Phone</p>
                     <p className="text-gray-300">+386 51 656 615</p>
@@ -61,7 +61,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <MapPin className="icon-gradient" size={24} />
+                  <MapPin className="text-secondary" size={24} />
                   <div>
                     <p className="font-space font-medium">Address</p>
                     <p className="text-gray-300">Not Yet</p>
