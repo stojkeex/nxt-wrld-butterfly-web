@@ -50,7 +50,7 @@ const Exclusive = () => {
               viewport={{ once: true }}
               className="glass-card p-10 text-center hover:scale-105 transition-transform duration-300"
             >
-              <feature.icon size={48} className="mx-auto mb-4 text-gradient-primary" />
+              <feature.icon size={48} className="mx-auto mb-4 text-secondary" />
               <h3 className="text-2xl font-bebas tracking-wider mb-3 text-gradient-primary">
                 {feature.title}
               </h3>
