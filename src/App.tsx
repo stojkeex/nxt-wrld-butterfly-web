@@ -13,7 +13,6 @@ import About from "./pages/About";
 import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import LiveDrop from './components/LiveDrop';
 
 const queryClient = new QueryClient();
 
@@ -55,7 +54,6 @@ const App = () => {
               onClose={() => setIsSupportOpen(false)} 
             />
           </div>
-          <LiveDrop />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
