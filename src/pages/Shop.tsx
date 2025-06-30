@@ -27,13 +27,12 @@ const Shop = () => {
   const products: Product[] = [
     {
       id: 1,
-      name: "NEON DREAMS HOODIE",
-      price: "$89.99",
-      category: "HOODIES",
-      image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=500&fit=crop",
+      name: "NXT WRLD T-SHIRT",
+      price: "Not Yet",
+      category: "T-SHIRTS",
+      image: "/nxtwrldtshirt.webp",
       images: [
-        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&h=800&fit=crop",
-        "https://images.unsplash.com/photo-1512327428405-da9b9256b861?w=600&h=800&fit=crop"
+        "/nxtwrldtshirt2.webp"
       ],
       description: "Comfortable hoodie with neon details, perfect for urban lifestyle.",
       sizes: ["XS", "S", "M", "L", "XL", "XXL"],
