@@ -37,7 +37,7 @@ const Shop = () => {
       ],
       description: "Comfortable hoodie with neon details, perfect for urban lifestyle.",
       sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      colors: ["Black", "White", "Neon Pink"],
+      colors: ["Black"],
       material: "80% cotton, 20% polyester",
       care: "Machine wash at 30°C, no bleach"
     },
