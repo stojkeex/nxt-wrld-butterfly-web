@@ -15,7 +15,8 @@ const Navigation = ({ onSupportClick }: NavigationProps) => {
     { path: '/about', label: 'ABOUT' },
     { path: '/shop', label: 'SHOP' },
     { path: '/contact', label: 'CONTACT' },
-    { path: '/terms', label: 'TERMS' }
+    { path: '/terms', label: 'TERMS' },
+    { path: '/exclusive', label: 'EXCLUSIVE' }
   ];
 
   const isActivePath = (path: string) => location.pathname === path;
