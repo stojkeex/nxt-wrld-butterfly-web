@@ -71,28 +71,28 @@ const About = () => {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="glass-card p-8 text-center hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-              <Users className="mx-auto mb-6 text-gradient-primary" size={48} />
+              <Users className="mx-auto mb-6 icon-gradient" size={48} />
               <h3 className="font-bebas text-2xl mb-4 tracking-wider">COMMUNITY</h3>
               <p className="text-gray-300 font-space text-sm leading-relaxed">
                 Building connections that transcend fashion and unite people through shared vision
               </p>
             </div>
             <div className="glass-card p-8 text-center hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-              <Target className="mx-auto mb-6 text-gradient-primary" size={48} />
+              <Target className="mx-auto mb-6 icon-gradient" size={48} />
               <h3 className="font-bebas text-2xl mb-4 tracking-wider">INNOVATION</h3>
               <p className="text-gray-300 font-space text-sm leading-relaxed">
                 Constantly pushing creative boundaries and embracing new technologies
               </p>
             </div>
             <div className="glass-card p-8 text-center hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-              <Award className="mx-auto mb-6 text-gradient-primary" size={48} />
+              <Award className="mx-auto mb-6 icon-gradient" size={48} />
               <h3 className="font-bebas text-2xl mb-4 tracking-wider">QUALITY</h3>
               <p className="text-gray-300 font-space text-sm leading-relaxed">
                 Premium materials and exceptional craftsmanship in every single piece
               </p>
             </div>
             <div className="glass-card p-8 text-center hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-              <Globe className="mx-auto mb-6 text-gradient-primary" size={48} />
+              <Globe className="mx-auto mb-6 icon-gradient" size={48} />
               <h3 className="font-bebas text-2xl mb-4 tracking-wider">SUSTAINABILITY</h3>
               <p className="text-gray-300 font-space text-sm leading-relaxed">
                 Responsible fashion practices for future generations and our planet
