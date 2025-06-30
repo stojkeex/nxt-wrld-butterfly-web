@@ -21,7 +21,7 @@ const LiveDrop = () => {
           LIMITED <span className="text-primary">DROP</span>
         </h2>
         <p className="text-gray-400 font-space mb-10">
-          Samo še danes. Ekskluzivno na voljo.
+          Coming Soon...
         </p>
 
         {/* Product Card */}
@@ -40,9 +40,9 @@ const LiveDrop = () => {
 
           {/* Info */}
           <div className="sm:w-1/2 text-left space-y-4">
-            <h3 className="font-bebas text-3xl tracking-wider">NXT Hoodie - Neon Edition</h3>
+            <h3 className="font-bebas text-3xl tracking-wider">NXT WRLD - Exlusive</h3>
             <p className="text-gray-300 font-space text-sm leading-relaxed">
-              Hiperlimitirana kolekcija z neonskimi detajli. Samo 50 kosov.
+              Coming in 11.11.2025!
             </p>
             <Link 
               to="/shop"
