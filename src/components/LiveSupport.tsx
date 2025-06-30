@@ -218,28 +218,35 @@ const LiveSupport = ({ isOpen, onClose }: LiveSupportProps) => {
           )}
 
           {activeTab === 'agents' && (
-            <div className="h-full overflow-y-auto p-6">
-              <h3 className="font-bebas text-2xl mb-6 tracking-wider text-primary">SUPPORT AGENTS</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                {agents.map((agent, index) => (
-                  <div key={index} className="glass-card p-4 flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-primary text-black rounded-full flex items-center justify-center font-bebas">
-                      {agent.avatar}
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-space font-medium">{agent.name}</h4>
-                      <p className="text-sm text-gray-400">{agent.role}</p>
-                      <span className={`text-xs px-2 py-1 rounded-full ${
-                        agent.status === 'online' ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'
-                      }`}>
-                        {agent.status}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+  <div className="h-full overflow-y-auto p-6">
+    <h3 className="font-bebas text-2xl mb-6 tracking-wider text-primary">SUPPORT AGENTS</h3>
+    <div className="grid md:grid-cols-2 gap-4">
+      {agents.map((agent, index) => (
+        <div key={index} className="glass-card p-4 flex items-center space-x-4">
+          <img
+            src={agent.avatar}
+            alt={agent.name}
+            className="w-12 h-12 rounded-full object-cover"
+          />
+          <div className="flex-1">
+            <h4 className="font-space font-medium">{agent.name}</h4>
+            <p className="text-sm text-gray-400">{agent.role}</p>
+            <span
+              className={`text-xs px-2 py-1 rounded-full ${
+                agent.status === 'online'
+                  ? 'bg-green-500/20 text-green-400'
+                  : 'bg-yellow-500/20 text-yellow-400'
+              }`}
+            >
+              {agent.status}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
 
           {activeTab === 'rules' && (
             <div className="h-full overflow-y-auto p-6">
