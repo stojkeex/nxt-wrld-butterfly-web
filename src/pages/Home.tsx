@@ -42,21 +42,21 @@ const Home = () => {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="glass-card p-8 text-center hover:bg-white/10 transition-colors">
-              <Zap className="mx-auto mb-6 text-gradient-primary" size={48} />
+              <Zap className="mx-auto mb-6 text-secondary" size={48} />
               <h3 className="font-bebas text-2xl mb-4 tracking-wider">INNOVATIVE DESIGN</h3>
               <p className="text-gray-300 font-space">
                 Cutting-edge fashion that pushes the boundaries of traditional streetwear.
               </p>
             </div>
             <div className="glass-card p-8 text-center hover:bg-white/10 transition-colors">
-              <Sparkles className="mx-auto mb-6 text-gradient-primary" size={48} />
+              <Sparkles className="mx-auto mb-6 text-secondary" size={48} />
               <h3 className="font-bebas text-2xl mb-4 tracking-wider">PREMIUM QUALITY</h3>
               <p className="text-gray-300 font-space">
                 Only the finest materials and craftsmanship go into every piece we create.
               </p>
             </div>
             <div className="glass-card p-8 text-center hover:bg-white/10 transition-colors">
-              <ShoppingBag className="mx-auto mb-6 text-gradient-primary" size={48} />
+              <ShoppingBag className="mx-auto mb-6 text-secondary" size={48} />
               <h3 className="font-bebas text-2xl mb-4 tracking-wider">LIMITED DROPS</h3>
               <p className="text-gray-300 font-space">
                 Exclusive collections released in limited quantities for true collectors.
