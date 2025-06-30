@@ -71,7 +71,7 @@ const LiveSupport = ({ isOpen, onClose }: LiveSupportProps) => {
     name: "Maj S.",
     role: "CEO",
     status: "online",
-    avatar: "https://media.discordapp.net/attachments/1329893059147862109/1385981143601385623/image.jpg?ex=68633fc6&is=6861ee46&hm=b5edcdb5999ce9a336ddd8028c388b53e7c7cb21cda2f99a3752ba74bd74f718&=&format=webp&width=482&height=857", // Pot do slike (npr. public/images/agents/alex.jpg)
+    avatar: "/crnistojke.webp", // Pot do slike (npr. public/images/agents/alex.jpg)
   },
   {
     name: "Rubens K.",
