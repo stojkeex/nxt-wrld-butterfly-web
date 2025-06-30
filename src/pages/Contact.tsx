@@ -49,7 +49,7 @@ const Contact = () => {
                   <Mail className="text-primary" size={24} />
                   <div>
                     <p className="font-space font-medium">Email</p>
-                    <p className="text-gray-300">hello@nxtwrld.com</p>
+                    <p className="text-gray-300">nxtwrld.contact@gmail.com</p>
                   </div>
                 </div>
                 
@@ -57,7 +57,7 @@ const Contact = () => {
                   <Phone className="text-secondary" size={24} />
                   <div>
                     <p className="font-space font-medium">Phone</p>
-                    <p className="text-gray-300">+1 (555) 123-4567</p>
+                    <p className="text-gray-300">+386 51 656 615</p>
                   </div>
                 </div>
                 
@@ -65,7 +65,7 @@ const Contact = () => {
                   <MapPin className="text-primary" size={24} />
                   <div>
                     <p className="font-space font-medium">Address</p>
-                    <p className="text-gray-300">123 Future St, Digital City, DC 12345</p>
+                    <p className="text-gray-300">Not Yet</p>
                   </div>
                 </div>
               </div>
