@@ -21,7 +21,8 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const [isSupportOpen, setIsSupportOpen] = useState(false);
-  const [broadcastMessage, setBroadcastMessage] = useState<string | null>(null);
+  const [broadcastMessages, setBroadcastMessages] = useState<string[]>([]);
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
 
   useEffect(() => {
     if (isSupportOpen) {
@@ -44,17 +45,18 @@ const App = () => {
     document.body.appendChild(script);
   }, []);
 
-  // Fetch live broadcastMessage without needing reload
   useEffect(() => {
     const fetchMessage = async () => {
       try {
         const res = await fetch('/announcement.json?_=' + new Date().getTime());
         if (!res.ok) return;
         const data = await res.json();
-        if (data?.message) {
-          setBroadcastMessage(data.message);
+        if (Array.isArray(data?.messages)) {
+          setBroadcastMessages(data.messages);
+        } else if (data?.message) {
+          setBroadcastMessages([data.message]);
         } else {
-          setBroadcastMessage(null);
+          setBroadcastMessages([]);
         }
       } catch (err) {
         console.error('Error fetching announcement:', err);
@@ -62,9 +64,18 @@ const App = () => {
     };
 
     fetchMessage();
-    const interval = setInterval(fetchMessage, 10000); // Poll every 10 seconds
+    const interval = setInterval(fetchMessage, 10000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (broadcastMessages.length > 1) {
+      const rotate = setInterval(() => {
+        setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % broadcastMessages.length);
+      }, 20000);
+      return () => clearInterval(rotate);
+    }
+  }, [broadcastMessages]);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -75,11 +86,6 @@ const App = () => {
           <ScrollToTop />
           <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
             <AnimatedButterflies />
-            {broadcastMessage && (
-              <div className="fixed top-0 left-0 right-0 bg-red-600 text-white text-center p-4 z-[9999] animate-pulse">
-                {broadcastMessage}
-              </div>
-            )}
             <Navigation onSupportClick={() => setIsSupportOpen(true)} />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -96,6 +102,11 @@ const App = () => {
               onClose={() => setIsSupportOpen(false)} 
             />
           </div>
+          {broadcastMessages.length > 0 && (
+            <div className="fixed bottom-0 left-0 right-0 bg-red-600 text-white text-center p-4 z-[9999] animate-pulse">
+              {broadcastMessages[currentMessageIndex]}
+            </div>
+          )}
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
