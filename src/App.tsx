@@ -8,12 +8,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import AnimatedButterflies from "./components/AnimatedButterflies";
 import LiveSupport from "./components/LiveSupport";
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import ScrollToTop from "./components/ScrollToTop";
+
 
 
 const queryClient = new QueryClient();
