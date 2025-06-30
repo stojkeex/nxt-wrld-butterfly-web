@@ -9,7 +9,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 relative">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="font-bebas text-8xl md:text-9xl lg:text-[12rem] tracking-wider mb-8">
+          <h1 className="font-sans-serif text-8xl md:text-9xl lg:text-[12rem] tracking-wider mb-8">
             <span className="text-primary">NXT</span> WRLD
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-12 font-space max-w-2xl mx-auto leading-relaxed">
