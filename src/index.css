@@ -89,8 +89,9 @@
   @keyframes sparkle {
     from { transform: translateX(0); }
     to { transform: translateX(200px); }
-
-    .text-gradient-primary {
+  }
+    
+  .text-gradient-primary {
     @apply bg-gradient-to-r from-[#DA3068] to-[#14469F] text-transparent bg-clip-text;
   }
 }
