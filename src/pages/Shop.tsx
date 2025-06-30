@@ -62,10 +62,10 @@ const Shop = () => {
       name: "NXT WRLD HOODIE",
       price: "Not Yet",
       category: "HOODIES",
-      image: "/nxtwrldhoodie.webp",
+      image: "/nxtwrldhoodie2.webp",
       images: [
-        "/nxtwrldhoodie.webp",
-        "/nxtwrldhoodie2.webp"
+        "/nxtwrldhoodie2.webp",
+        "/nxtwrldhoodie.webp"
       ],
       description: "Futuristic joggers with reflective elements for maximum style.",
       sizes: ["XS", "S", "M", "L", "XL"],
