@@ -67,11 +67,19 @@ const LiveSupport = ({ isOpen, onClose }: LiveSupportProps) => {
   ];
 
   const agents = [
-    { name: "Alex Chen", role: "Senior Support", status: "online", avatar: "AC" },
-    { name: "Maya Rodriguez", role: "Fashion Expert", status: "online", avatar: "MR" },
-    { name: "Jordan Kim", role: "Technical Support", status: "away", avatar: "JK" },
-    { name: "Casey Thompson", role: "Orders & Shipping", status: "online", avatar: "CT" }
-  ];
+  {
+    name: "Maj S.",
+    role: "CEO",
+    status: "online",
+    avatar: "https://media.discordapp.net/attachments/1329893059147862109/1385981143601385623/image.jpg?ex=68633fc6&is=6861ee46&hm=b5edcdb5999ce9a336ddd8028c388b53e7c7cb21cda2f99a3752ba74bd74f718&=&format=webp&width=482&height=857", // Pot do slike (npr. public/images/agents/alex.jpg)
+  },
+  {
+    name: "Rubens K.",
+    role: "CEO",
+    status: "online",
+    avatar: "", // Pot do slike
+  }
+];
 
   const rules = [
     "Be respectful and courteous to all team members and customers",
