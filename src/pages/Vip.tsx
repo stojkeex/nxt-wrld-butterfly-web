@@ -25,6 +25,17 @@ const Shop = () => {
   const [showNotice, setShowNotice] = useState(true);
 
   useEffect(() => {
+    if (showNotice) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showNotice]);
+
+  useEffect(() => {
     const timer = setTimeout(() => {
       setShowNotice(false);
     }, 30000); // 30 seconds
