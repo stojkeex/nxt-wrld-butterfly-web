@@ -46,8 +46,8 @@ const Navigation = ({ onSupportClick }: NavigationProps) => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`font-bebas text-lg tracking-wider transition-colors hover:text-primary ${
-                  isActivePath(item.path) ? 'text-primary' : 'text-white'
+                className={`font-bebas text-lg tracking-wider transition-colors hover:text-gradient-primary ${
+                  isActivePath(item.path) ? 'text-gradient-primary' : 'text-white'
                 }`}
               >
                 {item.label}
@@ -70,7 +70,7 @@ const Navigation = ({ onSupportClick }: NavigationProps) => {
         <div className="fixed inset-0 z-[999] bg-black/95 backdrop-blur-md flex flex-col items-center justify-center space-y-10 transition-all duration-300">
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="absolute top-6 right-6 text-white hover:text-primary transition"
+            className="absolute top-6 right-6 text-white hover:text-gradient-primary transition"
           >
             <X size={32} />
           </button>
@@ -79,7 +79,7 @@ const Navigation = ({ onSupportClick }: NavigationProps) => {
               key={item.path}
               to={item.path}
               onClick={() => setIsMenuOpen(false)}
-              className={`text-3xl font-bebas tracking-widest transition hover:text-primary ${
+              className={`text-3xl font-bebas tracking-widest transition hover:text-gradient-primary ${
                 isActivePath(item.path) ? 'text-primary' : 'text-white'
               }`}
             >
