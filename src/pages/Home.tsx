@@ -81,7 +81,7 @@ const Home = () => {
             </p>
             <Link 
               to="/shop"
-              className="inline-flex items-center space-x-3 bg-primary text-black px-8 py-4 hover:bg-secondary transition-colors font-bebas text-xl tracking-wider"
+              className="inline-flex items-center space-x-3 bg-primary text-black px-8 py-4 hover:bg-secondary transition-colors font-bebas text-xl tracking-wider btn-gradient-primary"
             >
               <span>SHOP NOW</span>
               <ShoppingBag size={24} />
