@@ -80,7 +80,7 @@ const Navigation = ({ onSupportClick }: NavigationProps) => {
               to={item.path}
               onClick={() => setIsMenuOpen(false)}
               className={`text-3xl font-bebas tracking-widest transition hover:text-gradient-primary ${
-                isActivePath(item.path) ? 'text-primary' : 'text-white'
+                isActivePath(item.path) ? 'text-gradient-primary' : 'text-white'
               }`}
             >
               {item.label}
