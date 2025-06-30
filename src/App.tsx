@@ -15,6 +15,7 @@ import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Terms from "./pages/Terms";
+import Exclusive from "./pages/Exclusive";
 
 
 
@@ -54,6 +55,7 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
               <Route path="/terms" element={<Terms />} />
+              <Route path="/exlusive" element={<Exclusive />} />
             </Routes>
             <LiveSupport 
               isOpen={isSupportOpen} 
