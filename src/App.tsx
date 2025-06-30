@@ -14,6 +14,7 @@ import About from "./pages/About";
 import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Terms from "./pages/Terms";
 
 
 
@@ -52,6 +53,7 @@ const App = () => {
               <Route path="/shop" element={<Shop />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
+              <Route path="/terms" element={<Terms />} />
             </Routes>
             <LiveSupport 
               isOpen={isSupportOpen} 
