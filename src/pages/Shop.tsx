@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ShoppingBag, Filter, Search } from 'lucide-react';
 import ProductModal from '../components/ProductModal';
@@ -97,7 +96,7 @@ const Shop = () => {
       <section className="py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <h1 className="font-bebas text-6xl md:text-8xl tracking-wider text-center mb-8">
-            <span className="text-primary">NXT</span> SHOP
+            <span className="text-gradient-primary">NXT</span> SHOP
           </h1>
           <p className="text-xl text-gray-300 text-center max-w-2xl mx-auto">
             Discover our latest collection of futuristic clothing and accessories
@@ -167,14 +166,14 @@ const Shop = () => {
                       <h3 className="font-bebas text-xl tracking-wider">{product.name}</h3>
                       <p className="text-sm text-gray-400">{product.category}</p>
                     </div>
-                    <span className="text-primary font-space font-bold">{product.price}</span>
+                    <span className="text-gradient-primary font-space font-bold">{product.price}</span>
                   </div>
                   <p className="text-gray-300 text-sm mb-4">{product.description}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-gray-400">
                       {product.sizes.length} sizes
                     </span>
-                    <ShoppingBag className="text-primary group-hover:scale-110 transition-transform" size={20} />
+                    <ShoppingBag className="text-gradient-primary group-hover:scale-110 transition-transform" size={20} />
                   </div>
                 </div>
               </div>
