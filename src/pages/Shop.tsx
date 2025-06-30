@@ -43,19 +43,19 @@ const Shop = () => {
     },
     {
       id: 2,
-      name: "CYBER JOGGERS",
-      price: "$69.99",
-      category: "PANTS",
-      image: "https://images.unsplash.com/photo-1506629905607-0214999bd8ca?w=400&h=500&fit=crop",
+      name: "NXT WRLD T-SHIRT",
+      price: "Not Yet",
+      category: "T-SHIRTS",
+      image: "/nxtwrldtshirtwhite.webp",
       images: [
-        "https://images.unsplash.com/photo-1506629905607-0214999bd8ca?w=600&h=800&fit=crop",
-        "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&h=800&fit=crop"
+        "/nxtwrldtshirtwhite.webp",
+        "/nxtwrldtshirtwhite2.webp"
       ],
       description: "Futuristic joggers with reflective elements for maximum style.",
       sizes: ["XS", "S", "M", "L", "XL"],
-      colors: ["Black", "Gray", "Navy"],
-      material: "100% polyester",
-      care: "Machine wash at 40°C, iron if needed"
+      colors: ["White"],
+      material: "80% polyester",
+      care: "Machine wash at 30°C, no bleach"
     },
     {
       id: 3,
