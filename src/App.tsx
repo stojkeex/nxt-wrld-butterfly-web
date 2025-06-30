@@ -67,11 +67,12 @@ const App = () => {
           <ScrollToTop />
           <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
             <AnimatedButterflies />
-            {broadcastMessage && (
-              <div className="fixed top-0 left-0 right-0 bg-red-600 text-white text-center p-4 z-50 animate-pulse">
-                {broadcastMessage}
-              </div>
-            )}
+           {broadcastMessage && (
+            <div className="fixed top-0 left-0 right-0 bg-red-600 text-white text-center p-4 z-[9999] animate-pulse">
+           {broadcastMessage}
+            </div>
+             )}
+
             <Navigation onSupportClick={() => setIsSupportOpen(true)} />
             <Routes>
               <Route path="/" element={<Home />} />
