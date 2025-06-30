@@ -44,23 +44,25 @@ const App = () => {
     document.body.appendChild(script);
   }, []);
 
+  // Fetch live broadcastMessage without needing reload
   useEffect(() => {
-    const fetchAnnouncement = () => {
-      fetch('/announcement.json')
-        .then(res => res.json())
-        .then(data => {
-          if (data.message) {
-            setBroadcastMessage(data.message);
-          } else {
-            setBroadcastMessage(null);
-          }
-        })
-        .catch((err) => console.error("Failed to fetch announcement:", err));
+    const fetchMessage = async () => {
+      try {
+        const res = await fetch('/announcement.json?_=' + new Date().getTime());
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data?.message) {
+          setBroadcastMessage(data.message);
+        } else {
+          setBroadcastMessage(null);
+        }
+      } catch (err) {
+        console.error('Error fetching announcement:', err);
+      }
     };
 
-    fetchAnnouncement();
-    const interval = setInterval(fetchAnnouncement, 10000);
-
+    fetchMessage();
+    const interval = setInterval(fetchMessage, 10000); // Poll every 10 seconds
     return () => clearInterval(interval);
   }, []);
 
