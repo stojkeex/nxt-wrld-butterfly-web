@@ -94,4 +94,7 @@
   .text-gradient-primary {
     @apply bg-gradient-to-r from-[#DA3068] to-[#14469F] text-transparent bg-clip-text;
   }
+  .btn-gradient-primary {
+    @apply bg-gradient-to-r from-[#DA3068] to-[#14469F] text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-all hover:opacity-90;
+  }
 }
