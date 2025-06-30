@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShoppingBag, Filter, Search } from 'lucide-react';
 import ProductModal from '../components/ProductModal';
 import PurchaseModal from '../components/PurchaseModal';
@@ -22,6 +22,14 @@ const Shop = () => {
   const [showPurchaseModal, setShowPurchaseModal] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('ALL');
+  const [showNotice, setShowNotice] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowNotice(false);
+    }, 30000); // 30 seconds
+    return () => clearTimeout(timer);
+  }, []);
 
   const products: Product[] = [
     {
@@ -30,10 +38,7 @@ const Shop = () => {
       price: "$15,00",
       category: "T-SHIRTS",
       image: "/nxtwrldtshirt.webp",
-      images: [
-        "/nxtwrldtshirt.webp",
-        "/nxtwrldtshirt2.webp"
-      ],
+      images: ["/nxtwrldtshirt.webp", "/nxtwrldtshirt2.webp"],
       description: "Comfortable hoodie with neon details, perfect for urban lifestyle.",
       sizes: ["XS", "S", "M", "L", "XL", "XXL"],
       colors: ["Black"],
@@ -46,10 +51,7 @@ const Shop = () => {
       price: "$15,00",
       category: "T-SHIRTS",
       image: "/nxtwrldtshirtwhite.webp",
-      images: [
-        "/nxtwrldtshirtwhite.webp",
-        "/nxtwrldtshirtwhite2.webp"
-      ],
+      images: ["/nxtwrldtshirtwhite.webp", "/nxtwrldtshirtwhite2.webp"],
       description: "Futuristic joggers with reflective elements for maximum style.",
       sizes: ["XS", "S", "M", "L", "XL"],
       colors: ["White"],
@@ -62,10 +64,7 @@ const Shop = () => {
       price: "15,00$",
       category: "HOODIES",
       image: "/nxtwrldhoodie2.webp",
-      images: [
-        "/nxtwrldhoodie2.webp",
-        "/nxtwrldhoodie.webp"
-      ],
+      images: ["/nxtwrldhoodie2.webp", "/nxtwrldhoodie.webp"],
       description: "Futuristic joggers with reflective elements for maximum style.",
       sizes: ["XS", "S", "M", "L", "XL"],
       colors: ["Black"],
@@ -91,7 +90,23 @@ const Shop = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen pt-24 relative">
+      {/* Warning Overlay */}
+      {showNotice && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex flex-col items-center justify-center text-center p-6">
+          <h2 className="text-red-500 text-3xl md:text-4xl font-bebas animate-pulse mb-6">STRICTLY CONFIDENTIAL</h2>
+          <p className="text-gray-200 text-lg md:text-xl font-space max-w-2xl mb-8">
+            This page is private and must not be shared under any circumstances. Sharing this link violates our policies and will result in legal action against the individual responsible.
+          </p>
+          <button
+            onClick={() => setShowNotice(false)}
+            className="bg-red-600 text-white px-6 py-3 rounded-lg font-space font-semibold animate-pulse"
+          >
+            I UNDERSTAND AND AGREE
+          </button>
+        </div>
+      )}
+
       {/* Header */}
       <section className="py-12 px-4">
         <div className="max-w-6xl mx-auto">
