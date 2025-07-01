@@ -1,8 +1,5 @@
-"use client"
-
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import Link from "next/link"
 
 const slides = [
   {
@@ -55,12 +52,12 @@ export default function HeroCarousel() {
         <div className="text-white">
           <h2 className="uppercase text-sm tracking-widest mb-1">NXT WRLD</h2>
           <h1 className="text-3xl md:text-5xl font-medium mb-4">{current.label}</h1>
-          <Link
+          <a
             href={current.link}
             className="text-white border-b border-white hover:text-gray-200 transition"
           >
             Shop Now
-          </Link>
+          </a>
         </div>
       </div>
     </section>
