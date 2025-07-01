@@ -3,7 +3,7 @@ import { ShoppingBag, Sparkles, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import LiveDrop from '../components/LiveDrop';
 import BlogSection from "@/components/BlogSection"
-import HeroHighlightSection from "@/components/HeroHighlightSection"
+
 
 const Home = () => {
   return (
@@ -67,7 +67,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <HeroHighlightSection />
       <BlogSection />
       {/* ✅ Live Drop Section */}
       <LiveDrop />
