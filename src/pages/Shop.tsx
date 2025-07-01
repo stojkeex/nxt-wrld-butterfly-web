@@ -60,7 +60,7 @@ const Shop = () => {
       id: 3,
       name: "NXT WRLD EXCLUSIVE",
       price: "$120,00",
-      category: "T-SHIRTS","EXCLUSIVE",
+      category: "T-SHIRTS",
       image: "/nxtwrldtshirtexclusive.webp",
       images: [
         "/nxtwrldtshirtexclusive.webp"
