@@ -45,8 +45,7 @@ const PurchaseModal = ({ isOpen, onClose, product }: PurchaseModalProps) => {
     platform: 'Email',
     icon: <Mail size={24} />,
     handle: 'nxtwrld.wear@gmail.com',
-    action: () =>
-      (window.location.href = `mailto:nxtwrld.wear@gmail.com?subject=Order: ${encodeURIComponent(product.name)}`),
+    action: () => window.location.href = 'mailto:nxtwrld.wear@gmail.com?subject=Order: Test',
     description: 'Send us an email with your order',
     color: 'hover:bg-blue-600',
   },
