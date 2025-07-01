@@ -3,17 +3,17 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const slides = [
   {
-    image: "/carousel1.webp",
+    image: "/nxtwrldtshirtwhite.webp",
     label: "New In: Handbags",
     link: "/shop",
   },
   {
-    image: "/carousel2.webp",
+    image: "/nxtwrldtshirt2.webp",
     label: "Essentials Collection",
     link: "/shop",
   },
   {
-    image: "/carousel3.webp",
+    image: "/nxtwrldtshirtexclusive.webp",
     label: "Summer Drop ‘25",
     link: "/shop",
   },
