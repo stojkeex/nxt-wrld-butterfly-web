@@ -1,7 +1,37 @@
 import React, { useState } from 'react';
 import { ShoppingBag, Filter, Search } from 'lucide-react';
-import ProductModal from '../components/ProductModal';
-import PurchaseModal from '../components/PurchaseModal';
+
+// Predpostavljamo, da sta ti komponenti v vaši strukturi projekta.
+// import ProductModal from '../components/ProductModal';
+// import PurchaseModal from '../components/PurchaseModal';
+
+// --- PRIMERI KOMPONENT ---
+// Placeholderji za modalna okna. Uporabite svoje dejanske komponente.
+const ProductModal = ({ product, isOpen, onClose, onPurchaseClick }) => {
+  if (!isOpen || !product) return null;
+  return (
+    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center" onClick={onClose}>
+      <div className="bg-gray-800 p-8 rounded-lg max-w-lg w-full" onClick={e => e.stopPropagation()}>
+        <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--heading-color)' }}>{product.name}</h2>
+        <p style={{ color: 'var(--content-color)' }}>{product.description}</p>
+        <button onClick={onPurchaseClick} className="mt-4 bg-primary text-black px-4 py-2 rounded">Purchase</button>
+      </div>
+    </div>
+  );
+};
+const PurchaseModal = ({ isOpen, onClose, product }) => {
+  if (!isOpen || !product) return null;
+  return (
+    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center" onClick={onClose}>
+      <div className="bg-gray-800 p-8 rounded-lg max-w-lg w-full" onClick={e => e.stopPropagation()}>
+        <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--heading-color)' }}>Confirm Purchase</h2>
+        <p style={{ color: 'var(--content-color)' }}>You are about to buy {product.name}.</p>
+        <button onClick={onClose} className="mt-4 bg-primary text-black px-4 py-2 rounded">Close</button>
+      </div>
+    </div>
+  );
+};
+
 
 interface Product {
   id: number;
@@ -25,67 +55,28 @@ const Shop = () => {
 
   const products: Product[] = [
     {
-      id: 1,
-      name: "NXT WRLD T-SHIRT",
-      price: "$50,00",
-      category: "T-SHIRTS",
-      image: "/nxtwrldtshirt.webp",
-      images: [
-        "/nxtwrldtshirt.webp",
-        "/nxtwrldtshirt2.webp"
-      ],
-      description: "Black T-Shirt made from love for better World!",
-      sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      colors: ["Black"],
-      material: "80% cotton, 20% polyester",
-      care: "Machine wash at 30°C, no bleach"
+      id: 1, name: "NXT WRLD T-SHIRT", price: "$50,00", category: "T-SHIRTS",
+      image: "/nxtwrldtshirt.webp", images: ["/nxtwrldtshirt.webp", "/nxtwrldtshirt2.webp"],
+      description: "Black T-Shirt made from love for better World!", sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+      colors: ["Black"], material: "80% cotton, 20% polyester", care: "Machine wash at 30°C, no bleach"
     },
     {
-      id: 2,
-      name: "NXT WRLD T-SHIRT",
-      price: "$50,00",
-      category: "T-SHIRTS",
-      image: "/nxtwrldtshirtwhite.webp",
-      images: [
-        "/nxtwrldtshirtwhite.webp",
-        "/nxtwrldtshirtwhite2.webp"
-      ],
-      description: "White T-Shirt made from love for better World!",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      colors: ["White"],
-      material: "80% polyester",
-      care: "Machine wash at 30°C, no bleach"
+      id: 2, name: "NXT WRLD T-SHIRT", price: "$50,00", category: "T-SHIRTS",
+      image: "/nxtwrldtshirtwhite.webp", images: ["/nxtwrldtshirtwhite.webp", "/nxtwrldtshirtwhite2.webp"],
+      description: "White T-Shirt made from love for better World!", sizes: ["XS", "S", "M", "L", "XL"],
+      colors: ["White"], material: "80% polyester", care: "Machine wash at 30°C, no bleach"
     },
     {
-      id: 3,
-      name: "NXT WRLD EXCLUSIVE",
-      price: "$120,00",
-      category: "T-SHIRTS",
-      image: "/nxtwrldtshirtexclusive.webp",
-      images: [
-        "/nxtwrldtshirtexclusive.webp"
-      ],
-      description: "Limited Item (Only 100 Made) for better World!",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      colors: ["Cameleon"],
-      material: "80% polyester",
-      care: "Machine wash at 30°C, no bleach"
+      id: 3, name: "NXT WRLD EXCLUSIVE", price: "$120,00", category: "T-SHIRTS",
+      image: "/nxtwrldtshirtexclusive.webp", images: ["/nxtwrldtshirtexclusive.webp"],
+      description: "Limited Item (Only 100 Made) for better World!", sizes: ["XS", "S", "M", "L", "XL"],
+      colors: ["Cameleon"], material: "80% polyester", care: "Machine wash at 30°C, no bleach"
     },
     {
-      id: 4,
-      name: "NXT WRLD HOODIE",
-      price: "$80,00",
-      category: "HOODIES",
-      image: "/nxtwrldhoodie2.webp",
-      images: [
-        "/nxtwrldhoodie2.webp",
-        "/nxtwrldhoodie.webp"
-      ],
-      description: "Are you cool? Not without the NXT WRLD Hoodie!",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      colors: ["Black"],
-      material: "80% polyester",
-      care: "Machine wash at 30°C, no bleach"
+      id: 4, name: "NXT WRLD HOODIE", price: "$80,00", category: "HOODIES",
+      image: "/nxtwrldhoodie2.webp", images: ["/nxtwrldhoodie2.webp", "/nxtwrldhoodie.webp"],
+      description: "Are you cool? Not without the NXT WRLD Hoodie!", sizes: ["XS", "S", "M", "L", "XL"],
+      colors: ["Black"], material: "80% polyester", care: "Machine wash at 30°C, no bleach"
     }
   ];
 
@@ -106,14 +97,20 @@ const Shop = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24">
+    <div 
+      className="min-h-screen pt-24"
+      style={{ 
+        backgroundImage: 'var(--bg-image)', 
+        color: 'var(--content-color)' 
+      }}
+    >
       {/* Header */}
       <section className="py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          <h1 className="font-bebas text-6xl md:text-8xl tracking-wider text-center mb-8">
+          <h1 className="font-bebas text-6xl md:text-8xl tracking-wider text-center mb-8" style={{ color: 'var(--heading-color)' }}>
             <span className="text-gradient-primary">NXT</span> SHOP
           </h1>
-          <p className="text-xl text-gray-300 text-center max-w-2xl mx-auto">
+          <p className="text-xl text-center max-w-2xl mx-auto">
             Discover our latest collection of futuristic clothing and accessories
           </p>
         </div>
@@ -132,6 +129,7 @@ const Shop = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full glass-card pl-10 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"
+                style={{color: 'var(--heading-color)'}}
               />
             </div>
 
@@ -143,7 +141,7 @@ const Shop = () => {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 font-space text-sm tracking-wider transition-colors ${
+                    className={`px-4 py-2 font-space text-sm tracking-wider transition-colors rounded-md ${
                       selectedCategory === category
                         ? 'bg-primary text-black'
                         : 'glass-card hover:bg-white/20'
@@ -178,14 +176,14 @@ const Shop = () => {
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-3">
                     <div>
-                      <h3 className="font-bebas text-xl tracking-wider">{product.name}</h3>
-                      <p className="text-sm text-gray-400">{product.category}</p>
+                      <h3 className="font-bebas text-xl tracking-wider" style={{ color: 'var(--heading-color)' }}>{product.name}</h3>
+                      <p className="text-sm">{product.category}</p>
                     </div>
                     <span className="text-gradient-primary font-space font-bold">{product.price}</span>
                   </div>
-                  <p className="text-gray-300 text-sm mb-4">{product.description}</p>
+                  <p className="text-sm mb-4">{product.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-400">
+                    <span className="text-xs">
                       {product.sizes.length} sizes
                     </span>
                     <ShoppingBag className="text-gradient-primary group-hover:scale-110 transition-transform" size={20} />
@@ -197,7 +195,7 @@ const Shop = () => {
 
           {filteredProducts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-xl text-gray-400">No products found for your search term.</p>
+              <p className="text-xl">No products found for your search term.</p>
             </div>
           )}
         </div>
