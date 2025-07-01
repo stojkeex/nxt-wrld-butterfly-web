@@ -22,7 +22,14 @@ const Exclusive = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 px-4">
+    // POPRAVEK: Glavnemu div-u so dodani stili, ki neposredno uporabljajo CSS spremenljivke.
+    <div 
+      className="min-h-screen pt-24 px-4"
+      style={{ 
+        backgroundImage: 'var(--bg-image)', 
+        color: 'var(--content-color)' 
+      }}
+    >
       {/* Hero */}
       <motion.section 
         initial={{ opacity: 0, y: -50 }} 
@@ -33,7 +40,7 @@ const Exclusive = () => {
         <h1 className="text-6xl md:text-8xl font-bebas tracking-widest mb-6">
           <span className="text-gradient-primary">EXCLUSIVE</span> ACCESS
         </h1>
-        <p className="text-xl text-gray-300 font-space max-w-2xl mx-auto">
+        <p className="text-xl font-space max-w-2xl mx-auto">
           Welcome to the inner circle. Experience fashion the world doesn’t know exists yet.
         </p>
       </motion.section>
@@ -54,7 +61,7 @@ const Exclusive = () => {
               <h3 className="text-2xl font-bebas tracking-wider mb-3 text-gradient-primary">
                 {feature.title}
               </h3>
-              <p className="text-sm text-gray-300 font-space leading-relaxed">
+              <p className="text-sm font-space leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>
@@ -79,7 +86,7 @@ const Exclusive = () => {
             THE FUTURE IS NOW
           </motion.h2>
           <motion.p
-            className="text-gray-300 text-lg font-space mb-12"
+            className="text-lg font-space mb-12"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -100,7 +107,7 @@ const Exclusive = () => {
                 className="glass-card p-6"
               >
                 <h4 className="text-xl font-bebas text-gradient-primary mb-2">Drop #{i + 1}</h4>
-                <p className="text-sm text-gray-300 font-space">
+                <p className="text-sm font-space">
                   Preview of a future-exclusive piece or experience with immersive tech, collabs, and unreleased styling.
                 </p>
               </motion.div>
