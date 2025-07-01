@@ -1,7 +1,8 @@
 import React from 'react';
 import { ShoppingBag, Sparkles, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import LiveDrop from '../components/LiveDrop'; // ✅ pot popravi glede na lokacijo
+import LiveDrop from '../components/LiveDrop';
+import BlogSection from "@/components/BlogSection"
 
 const Home = () => {
   return (
@@ -66,6 +67,7 @@ const Home = () => {
         </div>
       </section>
 
+      <BlogSection />
       {/* ✅ Live Drop Section */}
       <LiveDrop />
 
