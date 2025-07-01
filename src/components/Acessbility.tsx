@@ -73,11 +73,19 @@ const AccessibilityMenu = ({ onClose, settings, onSettingsChange }) => {
   };
 
   const handleColorChange = (type, value) => {
+    // Pravilno poimenovanje ključev za barve
+    const keyMap = {
+        backgrounds: 'background',
+        headings: 'heading',
+        contents: 'content'
+    };
+    const colorKey = keyMap[type] || type;
+    
     onSettingsChange({
       ...settings,
       customColors: {
         ...settings.customColors,
-        [type]: value,
+        [colorKey]: value,
       },
     });
   };
@@ -120,6 +128,8 @@ const AccessibilityMenu = ({ onClose, settings, onSettingsChange }) => {
     { id: 'high-saturation', label: 'High saturation', icon: <Droplet className="w-8 h-8 mx-auto fill-current" strokeWidth={1.5} />, onClick: () => handleColorModeChange('high-saturation') },
     { id: 'contrast', label: 'Contrast Mode', icon: <Contrast {...iconProps} />, onClick: () => handleColorModeChange('contrast') },
   ];
+
+  const colorTabKey = activeColorTab.slice(0, -1);
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-40 flex justify-start" onClick={onClose}>
@@ -190,8 +200,8 @@ const AccessibilityMenu = ({ onClose, settings, onSettingsChange }) => {
                     <input 
                         id="color-picker"
                         type="color" 
-                        value={settings.customColors[activeColorTab.slice(0, -1)] || ''} 
-                        onChange={(e) => handleColorChange(activeColorTab.slice(0, -1), e.target.value)}
+                        value={settings.customColors[colorTabKey] || '#ffffff'} 
+                        onChange={(e) => handleColorChange(activeColorTab, e.target.value)}
                         className="w-24 h-8 p-0 border-none rounded cursor-pointer bg-transparent"
                     />
                  </div>
@@ -225,7 +235,7 @@ const AccessibilityMenu = ({ onClose, settings, onSettingsChange }) => {
 
 
 // --- GLAVNA APLIKACIJA ---
-// Ta komponenta prikazuje, kako uporabiti meni dostopnosti.
+// Ta komponenta prikazuje, kako pravilno vključiti meni dostopnosti v vašo aplikacijo.
 const initialSettings: AccessibilitySettings = {
   screenReader: false,
   keyboardNav: false,
@@ -273,7 +283,6 @@ export default function App() {
         case 'bright-contrast':
             style.backgroundColor = '#FFFFFF';
             style.color = '#000000';
-            // Povečamo kontrast besedila, kar je težje simulirati samo z barvo
             break;
         case 'contrast': filter += ' contrast(150%)'; break;
     }
@@ -289,28 +298,51 @@ export default function App() {
     color: settings.customColors.heading
   }), [settings.customColors.heading]);
 
+  // OPOMBA: Napaka, ki ste jo videli, je posledica napačnega gnezdenja JSX oznak.
+  // Meni dostopnosti (AccessibilityMenu) ni mišljen kot ovoj (wrapper) za vašo aplikacijo.
+  // Namesto tega ga morate prikazati pogojno, kot je prikazano spodaj.
+  // S tem se izognete napakam, kot je npr. `<BrowserRouter>...</Acessbility>`.
+
   return (
-    <div style={getAppStyle()} className="min-h-screen font-sans">
-      <div className="relative p-8">
-        {/* Gumb za odpiranje menija */}
-        <button
-          onClick={() => setIsMenuOpen(true)}
-          className="fixed bottom-5 left-5 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 z-30"
-          aria-label="Odpri meni dostopnosti"
-        >
-          <Eye className="w-8 h-8" />
-        </button>
+    // Vaši providerji, kot so BrowserRouter, QueryClientProvider, itd., ovijejo celotno aplikacijo.
+    // <BrowserRouter>
+      <div style={getAppStyle()} className="min-h-screen font-sans">
+        <div className="relative p-8">
+          {/* Gumb za odpiranje menija */}
+          <button
+            onClick={() => setIsMenuOpen(true)}
+            className="fixed bottom-5 left-5 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 z-30"
+            aria-label="Odpri meni dostopnosti"
+          >
+            <Eye className="w-8 h-8" />
+          </button>
 
-        {isMenuOpen && (
-          <AccessibilityMenu 
-            onClose={() => setIsMenuOpen(false)} 
-            settings={settings}
-            onSettingsChange={handleSettingsChange}
-          />
-        )}
+          {/* Meni se prikaže tukaj, ko je isMenuOpen === true. */}
+          {/* Ne ovija ostale vsebine. */}
+          {isMenuOpen && (
+            <AccessibilityMenu 
+              onClose={() => setIsMenuOpen(false)} 
+              settings={settings}
+              onSettingsChange={handleSettingsChange}
+            />
+          )}
 
-       
+          {/* Ostala vsebina vaše aplikacije gre sem. */}
+          <main className="max-w-4xl mx-auto">
+            <h1 style={getHeadingStyle()} className="text-4xl font-bold mb-4">Dobrodošli na moji spletni strani</h1>
+            <p className="mb-4">
+              To je primer vsebine, na kateri lahko preizkusite meni z nastavitvami dostopnosti. Kliknite na ikono očesa v spodnjem levem kotu, da odprete meni.
+            </p>
+            <p>
+              Poskusite spremeniti barvne načine, kot sta "Dark High-Contrast" ali "Monochrome". Prav tako lahko prilagodite barve ozadja, naslovov in vsebine po meri. Vse spremembe se bodo takoj odrazile na tej strani.
+            </p>
+            <div className="mt-8 p-6 border rounded-lg">
+                  <h2 style={getHeadingStyle()} className="text-2xl font-semibold mb-3">Primer Naslova</h2>
+                  <p>To je odstavek z besedilom, da vidite, kako se spremeni barva vsebine. Spremembe, ki jih naredite v meniju, so interaktivne.</p>
+            </div>
+          </main>
+        </div>
       </div>
-    </div>
+    // </BrowserRouter>
   );
 }
