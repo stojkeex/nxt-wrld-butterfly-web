@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+// POPRAVEK: Odstranjen uvoz 'useLocation', ki je povzročal napako.
+import { Link } from 'react-router-dom';
 import { MessageCircle, Menu, X } from 'lucide-react';
 
 interface NavigationProps {
@@ -8,7 +9,9 @@ interface NavigationProps {
 
 const Navigation = ({ onSupportClick }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  // POPRAVEK: Namesto kljuke 'useLocation', trenutno pot dobimo neposredno iz brskalnika.
+  // To prepreči sesutje, če komponenta ni znotraj usmerjevalnika (Router).
+  const [pathname, setPathname] = useState(window.location.pathname);
 
   const navItems = [
     { path: '/', label: 'HOME' },
@@ -19,7 +22,7 @@ const Navigation = ({ onSupportClick }: NavigationProps) => {
     { path: '/exclusive', label: 'EXCLUSIVE' },
   ];
 
-  const isActivePath = (path: string) => location.pathname === path;
+  const isActivePath = (path: string) => pathname === path;
 
   // Lock scroll when menu is open
   useEffect(() => {
@@ -28,6 +31,21 @@ const Navigation = ({ onSupportClick }: NavigationProps) => {
       document.body.style.overflow = 'unset';
     };
   }, [isMenuOpen]);
+
+  // Poslušaj spremembe poti, da se aktivna povezava pravilno posodobi
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setPathname(window.location.pathname);
+    };
+    // Dodamo event listener za popstate, ki se sproži ob navigaciji naprej/nazaj
+    window.addEventListener('popstate', handleLocationChange);
+    
+    // Počistimo listener ob odstranitvi komponente
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+    };
+  }, []);
+
 
   return (
     <>
@@ -49,8 +67,9 @@ const Navigation = ({ onSupportClick }: NavigationProps) => {
                 key={item.path}
                 to={item.path}
                 className={`font-bebas text-lg tracking-wider transition-colors hover:text-gradient-primary ${
-                  isActivePath(item.path) ? 'text-gradient-primary' : 'text-white'
+                  isActivePath(item.path) ? 'text-gradient-primary' : ''
                 }`}
+                style={!isActivePath(item.path) ? { color: 'var(--heading-color)' } : {}}
               >
                 {item.label}
               </Link>
