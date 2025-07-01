@@ -29,7 +29,7 @@ export default function BlogSection() {
     <section className="py-20 px-4 md:px-8 lg:px-16 bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="text-4xl font-bold mb-10 text-center"
+          className="text-4xl font-bebas mb-10 text-center"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -53,7 +53,7 @@ export default function BlogSection() {
                 />
                 <CardContent className="p-6">
                   <p className="text-sm text-muted-foreground mb-2">{post.date}</p>
-                  <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
+                  <h3 className="text-xl font-bebas mb-2">{post.title}</h3>
                   <p className="text-sm text-muted-foreground">{post.description}</p>
                 </CardContent>
               </Card>
