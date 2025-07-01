@@ -327,20 +327,6 @@ export default function App() {
             />
           )}
 
-          {/* Ostala vsebina vaše aplikacije gre sem. */}
-          <main className="max-w-4xl mx-auto">
-            <h1 style={getHeadingStyle()} className="text-4xl font-bold mb-4">Dobrodošli na moji spletni strani</h1>
-            <p className="mb-4">
-              To je primer vsebine, na kateri lahko preizkusite meni z nastavitvami dostopnosti. Kliknite na ikono očesa v spodnjem levem kotu, da odprete meni.
-            </p>
-            <p>
-              Poskusite spremeniti barvne načine, kot sta "Dark High-Contrast" ali "Monochrome". Prav tako lahko prilagodite barve ozadja, naslovov in vsebine po meri. Vse spremembe se bodo takoj odrazile na tej strani.
-            </p>
-            <div className="mt-8 p-6 border rounded-lg">
-                  <h2 style={getHeadingStyle()} className="text-2xl font-semibold mb-3">Primer Naslova</h2>
-                  <p>To je odstavek z besedilom, da vidite, kako se spremeni barva vsebine. Spremembe, ki jih naredite v meniju, so interaktivne.</p>
-            </div>
-          </main>
         </div>
       </div>
     // </BrowserRouter>
