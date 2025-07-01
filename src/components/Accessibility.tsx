@@ -15,9 +15,10 @@ interface AccessibilitySettings {
 }
 
 // --- ZAČETNE NASTAVITVE ---
+// Posodobljeno: Začetne barve so zdaj usklajene z vašo CSS temo.
 const initialSettings: AccessibilitySettings = {
   colorMode: 'normal',
-  customColors: { background: '#0a0a0a', heading: '#ffffff', content: '#a0a0a0' },
+  customColors: { background: '#0d0d0d', heading: '#fafafa', content: '#a6a6a6' },
 };
 
 // --- POD-KOMPONENTE MENIJA ---
