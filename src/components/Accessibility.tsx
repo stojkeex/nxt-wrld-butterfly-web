@@ -108,50 +108,57 @@ const AccessibilityProvider = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [settings, setSettings] = useState<AccessibilitySettings>(initialSettings);
 
-  // Ta useEffect bo uporabil nastavitve na celotni strani (globalno)
   useEffect(() => {
     const root = document.documentElement;
     
-    // Uporabi barve preko CSS spremenljivk
-    root.style.setProperty('--bg-color', settings.customColors.background);
+    // Posodobljeno: Namesto background-color, nastavimo background-image
+    // To prepreči, da bi drugi gradienti prekrili našo barvo.
+    const bgColor = settings.customColors.background;
+    root.style.setProperty('--bg-image', `linear-gradient(to bottom, ${bgColor}, ${bgColor})`);
+    
     root.style.setProperty('--heading-color', settings.customColors.heading);
     root.style.setProperty('--content-color', settings.customColors.content);
     
-    // Uporabi filtre
     let filter = '';
+    let bgImageOverride = '';
+
     switch(settings.colorMode) {
         case 'monochrome': filter = 'grayscale(100%)'; break;
         case 'low-saturation': filter = 'saturate(50%)'; break;
         case 'high-saturation': filter = 'saturate(200%)'; break;
         case 'dark-contrast': 
-            root.style.setProperty('--bg-color', '#000000');
+            bgImageOverride = 'linear-gradient(to bottom, #000000, #000000)';
             root.style.setProperty('--content-color', '#FFFFFF');
             break;
         case 'bright-contrast': 
-            root.style.setProperty('--bg-color', '#FFFFFF');
+            bgImageOverride = 'linear-gradient(to bottom, #FFFFFF, #FFFFFF)';
             root.style.setProperty('--content-color', '#000000');
             break;
         case 'contrast': filter = 'contrast(150%)'; break;
     }
+    
+    if (bgImageOverride) {
+        root.style.setProperty('--bg-image', bgImageOverride);
+    }
+    
     root.style.filter = filter;
 
-    // Počisti stile ob odstranitvi komponente
     return () => {
-        root.style.removeProperty('--bg-color');
+        root.style.removeProperty('--bg-image');
         root.style.removeProperty('--heading-color');
         root.style.removeProperty('--content-color');
         root.style.filter = 'none';
     }
   }, [settings]);
 
-  // Uporaba portala za gumb in meni, da se preprečijo težave s pozicioniranjem
   return ReactDOM.createPortal(
     <>
       <style>{`
         body, .root-app-container {
-          background-color: var(--bg-color, #0a0a0a);
+          /* Uporabimo --bg-image namesto background-color */
+          background-image: var(--bg-image);
           color: var(--content-color, #a0a0a0);
-          transition: background-color 0.3s, color 0.3s;
+          transition: color 0.3s; /* Odstranimo prehod za ozadje, ker je slika */
         }
         h1, h2, h3, h4, h5, h6 {
           color: var(--heading-color, #ffffff);
@@ -166,7 +173,6 @@ const AccessibilityProvider = () => {
           onClose={() => setIsMenuOpen(false)} 
           settings={settings}
           onSettingsChange={setSettings}
-          initialSettings={initialSettings}
         />
       )}
     </>,
