@@ -3,12 +3,14 @@ import { ShoppingBag, Sparkles, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import LiveDrop from '../components/LiveDrop';
 import BlogSection from "@/components/BlogSection"
+import HeroCarousel from "@/components/HeroCarousel"
 
 
 const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
+      <HeroCarousel />
       <section className="min-h-screen flex items-center justify-center px-4 relative">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="font-sans-serif text-8xl md:text-9xl lg:text-[12rem] tracking-wider mb-8">
