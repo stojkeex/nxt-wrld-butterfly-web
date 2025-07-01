@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import AnimatedButterflies from "./components/AnimatedButterflies";
 import LiveSupport from "./components/LiveSupport";
 import ScrollToTop from "./components/ScrollToTop";
+import Acessbility from "./components/Acessbility";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Shop from "./pages/Shop";
@@ -98,6 +99,7 @@ const App = () => {
               {broadcastMessages[currentMessageIndex]}
             </div>
           )}
+        </Acessbility>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
