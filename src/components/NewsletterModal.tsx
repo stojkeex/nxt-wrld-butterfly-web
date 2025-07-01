@@ -6,13 +6,17 @@ const NewsletterModal = () => {
 
   // ✅ Lock scroll when modal is open
   useEffect(() => {
+    const body = document.body
     if (isOpen) {
-      document.body.style.overflow = "hidden"
+      body.style.overflow = "hidden"
+      body.style.height = "100vh"
     } else {
-      document.body.style.overflow = ""
+      body.style.overflow = ""
+      body.style.height = ""
     }
     return () => {
-      document.body.style.overflow = ""
+      body.style.overflow = ""
+      body.style.height = ""
     }
   }, [isOpen])
 
@@ -20,7 +24,7 @@ const NewsletterModal = () => {
 
   return (
     <div className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center px-4">
-      <div className="relative bg-white text-black rounded-2xl shadow-xl w-full max-w-md p-6 sm:p-8 text-center space-y-6">
+      <div className="relative bg-white text-black rounded-2xl shadow-xl w-full max-w-md p-6 sm:p-8 text-center space-y-6 overflow-y-auto max-h-[90vh]">
         {/* ✖ Close button */}
         <button
           onClick={() => setIsOpen(false)}
