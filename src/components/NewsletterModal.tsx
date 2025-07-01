@@ -1,45 +1,43 @@
-import { useEffect } from 'react'
-import { Check, X } from 'lucide-react'
+import { useEffect, useState } from "react"
+import { Check, X } from "lucide-react"
 
-interface NewsletterModalProps {
-  isOpen: boolean
-  onClose: () => void
-}
+const NewsletterModal = () => {
+  const [isOpen, setIsOpen] = useState(true)
 
-const NewsletterModal = ({ isOpen, onClose }: NewsletterModalProps) => {
+  // ✅ Lock scroll when modal is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden"
     } else {
-      document.body.style.overflow = ''
+      document.body.style.overflow = ""
     }
     return () => {
-      document.body.style.overflow = ''
+      document.body.style.overflow = ""
     }
   }, [isOpen])
 
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 px-4">
+    <div className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center px-4">
       <div className="relative bg-white text-black rounded-2xl shadow-xl w-full max-w-md p-6 sm:p-8 text-center space-y-6">
-        {/* Close Button */}
+        {/* ✖ Close button */}
         <button
-          onClick={onClose}
+          onClick={() => setIsOpen(false)}
           className="absolute top-4 right-4 text-black hover:text-gray-500"
         >
           <X size={24} />
         </button>
 
-        {/* Headline */}
+        {/* 🏁 Headline */}
         <h2 className="text-3xl sm:text-4xl font-extrabold tracking-wide uppercase">
           Be First To Know
         </h2>
         <p className="text-sm sm:text-base text-gray-600">
-          Sign up to get early access to limited releases & exclusive content.
+          Sign up for early access to limited releases & more.
         </p>
 
-        {/* ✅ Bullet Points */}
+        {/* ✅ Kljukice */}
         <div className="text-left space-y-3">
           <div className="flex items-start gap-3">
             <Check className="text-green-600 mt-1" size={20} />
@@ -55,7 +53,7 @@ const NewsletterModal = ({ isOpen, onClose }: NewsletterModalProps) => {
           </div>
         </div>
 
-        {/* Email Input */}
+        {/* 📧 Email + button */}
         <div className="space-y-4">
           <input
             type="email"
