@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { ShoppingBag, Sparkles, Zap, Sun, Moon, Droplet, Eye, Volume2, Contrast, ChevronDown, X, Languages, Accessibility, Keyboard, Route, Mic, Undo2, Monitor } from 'lucide-react';
-import { Link, BrowserRouter } from 'react-router-dom';
+// Opomba: Komponenta Link je bila odstranjena, da se prepreči napaka pri usmerjanju.
+// Uporabljene so standardne <a> oznake za navigacijo.
 
 // --- TIPI PODATKOV (TYPESCRIPT) ---
 interface ColorSettings {
@@ -81,13 +82,6 @@ const AccessibilityMenu = ({ onClose, settings, onSettingsChange, initialSetting
   const handleColorModeChange = (mode) => onSettingsChange(prev => ({ ...prev, colorMode: prev.colorMode === mode ? 'normal' : mode }));
 
   const iconProps = { className: "w-8 h-8 mx-auto", strokeWidth: 1.5 };
-  const navigationAdjustments = [
-    { id: 'screenReader', label: 'Screen Reader', icon: <Accessibility {...iconProps} /> },
-    { id: 'keyboardNav', label: 'Keyboard Nav', icon: <Keyboard {...iconProps} /> },
-    { id: 'smartNav', label: 'Smart Nav', icon: <Route {...iconProps} /> },
-    { id: 'textReader', label: 'Text Reader', icon: <Volume2 {...iconProps} /> },
-    { id: 'voiceCommands', label: 'Voice Commands', icon: <Mic {...iconProps} /> },
-  ];
   const colorAdjustments = [
     { id: 'monochrome', label: 'Monochrome', icon: <Monitor {...iconProps} /> },
     { id: 'dark-contrast', label: 'Dark Contrast', icon: <Moon {...iconProps} /> },
@@ -149,7 +143,7 @@ const BlogSection = () => <div className="py-20"><h2 className="font-bebas text-
 const LiveDrop = () => <div className="py-20"><h2 className="font-bebas text-5xl text-center">Live Drop</h2></div>;
 const NewsletterModal = () => null;
 
-const HomePage = () => {
+const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [settings, setSettings] = useState<AccessibilitySettings>(initialSettings);
 
@@ -206,14 +200,14 @@ const HomePage = () => {
             Step into the future of fashion. Where innovation meets style in the digital age.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link to="/shop" className="glass-card px-8 py-4 hover:bg-primary hover:text-black transition-all duration-300 group flex items-center space-x-3">
+            <a href="/shop" className="glass-card px-8 py-4 hover:bg-primary hover:text-black transition-all duration-300 group flex items-center space-x-3">
               <ShoppingBag className="group-hover:scale-110 transition-transform" size={24} />
               <span className="font-bebas text-xl tracking-wider">EXPLORE COLLECTION</span>
-            </Link>
-            <Link to="/about" className="glass-card px-8 py-4 hover:bg-white/20 transition-colors flex items-center space-x-3">
+            </a>
+            <a href="/about" className="glass-card px-8 py-4 hover:bg-white/20 transition-colors flex items-center space-x-3">
               <Sparkles size={24} />
               <span className="font-bebas text-xl tracking-wider">DISCOVER STORY</span>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -261,10 +255,10 @@ const HomePage = () => {
             <p className="text-xl mb-8 font-space" style={{color: settings.customColors.content}}>
               Be part of the next generation of fashion enthusiasts
             </p>
-            <Link to="/shop" className="inline-flex items-center space-x-3 bg-primary text-black px-8 py-4 hover:bg-secondary transition-colors font-bebas text-xl tracking-wider btn-gradient-primary">
+            <a href="/shop" className="inline-flex items-center space-x-3 bg-primary text-black px-8 py-4 hover:bg-secondary transition-colors font-bebas text-xl tracking-wider btn-gradient-primary">
               <span>SHOP NOW</span>
               <ShoppingBag size={24} />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -272,16 +266,4 @@ const HomePage = () => {
   );
 };
 
-// POPRAVEK: Glavna komponenta, ki vključuje BrowserRouter
-// Napaka se je zgodila, ker komponente <Link> ne morete uporabljati brez nadrejene komponente <BrowserRouter>.
-// Ta nova komponenta 'App' ovije 'HomePage' in tako reši težavo.
-const App = () => {
-  return (
-    <BrowserRouter>
-      <HomePage />
-    </BrowserRouter>
-  );
-};
-
-export default App;
-
+export default Home;
