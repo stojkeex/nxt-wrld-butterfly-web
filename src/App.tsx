@@ -8,7 +8,6 @@ import Navigation from "./components/Navigation";
 import AnimatedButterflies from "./components/AnimatedButterflies";
 import LiveSupport from "./components/LiveSupport";
 import ScrollToTop from "./components/ScrollToTop";
-import Acessbility from "./components/Acessbility";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Shop from "./pages/Shop";
@@ -76,7 +75,6 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
-          <Acessbility />
           <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
             <AnimatedButterflies />
             <Navigation onSupportClick={() => setIsSupportOpen(true)} />
