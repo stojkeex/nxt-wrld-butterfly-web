@@ -25,31 +25,33 @@ const PurchaseModal = ({ isOpen, onClose, product }: PurchaseModalProps) => {
   if (!isOpen || !product) return null;
 
   const purchaseOptions = [
-    {
-      platform: 'Instagram',
-      icon: <Instagram size={24} />,
-      handle: '@nxtwrld.wear',
-      action: () => window.open('https://instagram.com/nxtwrld.wear', '_blank'),
-      description: 'Send us a direct message on Instagram',
-      color: 'hover:bg-pink-600'
-    },
-    {
-      platform: 'WhatsApp',
-      icon: <MessageCircle size={24} />,
-      handle: '+386 51 656 615',
-      action: () => window.open('https://wa.me/38651656615', '_blank'),
-      description: 'Contact us via WhatsApp',
-      color: 'hover:bg-green-600'
-    },
-    {
-      platform: 'Email',
-      icon: <Mail size={24} />,
-      handle: 'nxtwrld.wear@gmail.com',
-     action: () => window.location.href = 'mailto:nxtwrld.wear@gmail.com?subject=Order: ' + product.name,
-      description: 'Send us an email with your order',
-      color: 'hover:bg-blue-600'
-    }
-  ];
+  {
+    platform: 'Instagram',
+    icon: <Instagram size={24} />,
+    handle: '@nxtwrld.wear',
+    action: () => window.open('https://instagram.com/nxtwrld.wear', '_blank'),
+    description: 'Send us a direct message on Instagram',
+    color: 'hover:bg-pink-600',
+  },
+  {
+    platform: 'WhatsApp',
+    icon: <MessageCircle size={24} />,
+    handle: '+386 51 656 615',
+    action: () => window.open('https://wa.me/38651656615', '_blank'),
+    description: 'Contact us via WhatsApp',
+    color: 'hover:bg-green-600',
+  },
+  {
+    platform: 'Email',
+    icon: <Mail size={24} />,
+    handle: 'nxtwrld.wear@gmail.com',
+    action: () =>
+      (window.location.href = `mailto:nxtwrld.wear@gmail.com?subject=Order: ${encodeURIComponent(product.name)}`),
+    description: 'Send us an email with your order',
+    color: 'hover:bg-blue-600',
+  },
+];
+
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
