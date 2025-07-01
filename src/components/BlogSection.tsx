@@ -5,23 +5,11 @@ import { motion } from "framer-motion"
 
 const blogPosts = [
   {
-    title: "Behind the Vision of NXT WRLD",
-    description: "A deep dive into the inspiration and mindset behind the designs.",
+    title: "Step into the NXT WRLD. 🌍🦋",
+    description: "#NXTWRLD #StreetwearDrop #NewArrival #GraphicTee",
     image: "/blog1.webp",
-    date: "June 25, 2025",
-  },
-  {
-    title: "Styling Exclusive Drops",
-    description: "Tips on how to wear and combine our most limited pieces.",
-    image: "/blog2.webp",
-    date: "June 18, 2025",
-  },
-  {
-    title: "The Future of Streetwear",
-    description: "Our view on the digital-native generation and fashion's next phase.",
-    image: "/blog3.webp",
-    date: "June 10, 2025",
-  },
+    date: "July 1, 2025",
+  }
 ]
 
 export default function BlogSection() {
