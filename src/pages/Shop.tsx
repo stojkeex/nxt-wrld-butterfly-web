@@ -27,14 +27,14 @@ const Shop = () => {
     {
       id: 1,
       name: "NXT WRLD T-SHIRT",
-      price: "Not Yet",
+      price: "$50,00",
       category: "T-SHIRTS",
       image: "/nxtwrldtshirt.webp",
       images: [
         "/nxtwrldtshirt.webp",
         "/nxtwrldtshirt2.webp"
       ],
-      description: "Comfortable hoodie with neon details, perfect for urban lifestyle.",
+      description: "Black T-Shirt made from love for better World!",
       sizes: ["XS", "S", "M", "L", "XL", "XXL"],
       colors: ["Black"],
       material: "80% cotton, 20% polyester",
@@ -43,14 +43,14 @@ const Shop = () => {
     {
       id: 2,
       name: "NXT WRLD T-SHIRT",
-      price: "Not Yet",
+      price: "$50,00",
       category: "T-SHIRTS",
       image: "/nxtwrldtshirtwhite.webp",
       images: [
         "/nxtwrldtshirtwhite.webp",
         "/nxtwrldtshirtwhite2.webp"
       ],
-      description: "Futuristic joggers with reflective elements for maximum style.",
+      description: "White T-Shirt made from love for better World!",
       sizes: ["XS", "S", "M", "L", "XL"],
       colors: ["White"],
       material: "80% polyester",
@@ -58,15 +58,30 @@ const Shop = () => {
     },
     {
       id: 3,
+      name: "NXT WRLD EXCLUSIVE",
+      price: "$120,00",
+      category: "T-SHIRTS","EXCLUSIVE",
+      image: "/nxtwrldtshirtexclusive.webp",
+      images: [
+        "/nxtwrldtshirtexclusive.webp"
+      ],
+      description: "Limited Item (Only 100 Made) for better World!",
+      sizes: ["XS", "S", "M", "L", "XL"],
+      colors: ["Cameleon"],
+      material: "80% polyester",
+      care: "Machine wash at 30°C, no bleach"
+    },
+    {
+      id: 4,
       name: "NXT WRLD HOODIE",
-      price: "Not Yet",
+      price: "$80,00",
       category: "HOODIES",
       image: "/nxtwrldhoodie2.webp",
       images: [
         "/nxtwrldhoodie2.webp",
         "/nxtwrldhoodie.webp"
       ],
-      description: "Futuristic joggers with reflective elements for maximum style.",
+      description: "Are you cool? Not without the NXT WRLD Hoodie!",
       sizes: ["XS", "S", "M", "L", "XL"],
       colors: ["Black"],
       material: "80% polyester",
@@ -74,7 +89,7 @@ const Shop = () => {
     }
   ];
 
-  const categories = ["ALL", "HOODIES", "PANTS", "T-SHIRTS", "JACKETS", "SHOES", "ACCESSORIES"];
+  const categories = ["ALL", "HOODIES", "PANTS", "T-SHIRTS", "JACKETS", "SHOES", "ACCESSORIES", "EXCLUSIVE"];
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
