@@ -35,7 +35,42 @@ const App = () => {
       document.body.style.overflow = 'unset';
     };
   }, [isSupportOpen]);
-
+ const script = document.createElement("script")
+    script.innerHTML = `
+      window.interdeal = {
+        "sitekey": "dbb17f7e13528197947d91f3e2bec607",
+        "Position": "Left",
+        "domains": {
+            "js": "https://cdn.equalweb.com/",
+            "acc": "https://access.equalweb.com/"
+        },
+        "Menulang": "EN",
+        "btnStyle": {
+            "vPosition": ["80%", "80%"],
+            "scale": ["0.5", "0.5"],
+            "color": {
+                "main": "#1876c9",
+                "second": "#ffffff"
+            },
+            "icon": {
+                "outline": false,
+                "type": 9,
+                "shape": "circle"
+            }
+        }
+      };
+      (function(doc, head, body){
+          var coreCall = doc.createElement('script');
+          coreCall.src = interdeal.domains.js + 'core/5.1.13/accessibility.js';
+          coreCall.defer = true;
+          coreCall.integrity = 'sha512-70/AbMe6C9H3r5hjsQleJEY4y5l9ykt4WYSgyZj/WjpY/ord/26LWfva163b9W+GwWkfwbP0iLT+h6KRl+LoXA==';
+          coreCall.crossOrigin = 'anonymous';
+          coreCall.setAttribute('data-cfasync', true);
+          body ? body.appendChild(coreCall) : head.appendChild(coreCall);
+      })(document, document.head, document.body);
+    `
+    document.body.appendChild(script)
+  }, [])
 
   useEffect(() => {
     const fetchMessage = async () => {
