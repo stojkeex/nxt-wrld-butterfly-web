@@ -76,6 +76,7 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          </Acessbility>
           <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
             <AnimatedButterflies />
             <Navigation onSupportClick={() => setIsSupportOpen(true)} />
@@ -99,7 +100,6 @@ const App = () => {
               {broadcastMessages[currentMessageIndex]}
             </div>
           )}
-        </Acessbility>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
